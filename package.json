@@ -40,5 +40,7 @@
     "onchange": "^5.2.0",
     "rimraf": "^2.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }
