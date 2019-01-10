@@ -1,15 +1,14 @@
-/* Imort SCSS */ 
-import "variables";
-import "mixins";
+@import normalize.scss;
 
-import "normalize";
-import "layout";
+.sidebar-left {
+    background: #333333;
+    height: 700px;
+    max-width: 15%;
+    min-width: 100px;
+}
 
-/* Components */
-import "components/form_field";
+header {
+	height: 60px;
+	position: flax;
+}
 
-/* Sections */
-import "section/registration_form";
-
-/* Pages / Views */
-import "pages/registration";
