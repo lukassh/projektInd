@@ -1,14 +1,104 @@
-@import normalize.scss;
+* {
+  margin: 0;
+}
+.container {
+    margin: 0 auto;   
+    width: 100%;
+    max-width: 1200px;
+} /* container */
+.sidebar {
+  background: #1f1f1f;
+  width: 188px;
+  float: left;
+  height: 100vh;
+  position: fixed;
+ 
+ .top {
+    height: 60px;
+    margin: 10px;
 
-.sidebar-left {
-    background: #333333;
-    height: 700px;
-    max-width: 15%;
-    min-width: 100px;
+    .logo {
+      font-size: 15px;
+      color: #fff;
+      display: inline-block;
+      float: left;
+    } /* end of logo class */ 
+    .hamburger {
+      em {
+        color: #fff;
+        display: flex;
+        font-size: 1.3em;
+        float: right;
+        padding: 8px;
+
+      } /* end of em */
+    } /* end of hamburger */ 
+  } /* end of top */
+
+  .nav-sidebar {
+    color: #fff;
+  } /* end of nav-sidebar */
+  
+  
+} /* end of sidebar */ 
+
+.header { /* header begin */ 
+  height: 60px;
+  width: 1120px;;
+  background: #ffffff;
+  position: fixed;
+  display: flex;
+    div:first-child {
+      display: flex;
+      flex: 4;
+    }
+
+    div::last-child {
+      display: flex;
+      flex: 1;
+      border: 1px solid black;
+    }
+
+} /* end of header */ 
+
+.main { 
+  margin-left: 188px;
+  background: #f5f5f2;
+  width: 1120px;
+  float: left;
+  height: 580px;
 }
 
-header {
-	height: 60px;
-	position: flax;
+.content {
+  margin: 80px 20px 20px;
+  background: #ffffff;
+  display: flex;
+  height: 500px;
 }
 
+
+/* grid  */
+
+.row::before, .row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: percentage($i / 12);
+  }
+}
+
+@for $i from 0 through 12 {
+  .col-offset-#{$i} {
+    width: percentage($i / 12);
+  }
+}
+                                
+ [class*='col-'] {
+    float: left;
+    min-height: 1px;
+
+}

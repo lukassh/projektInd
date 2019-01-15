@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "Dowiązanie do _variables.css",
+	"sources": [
+		"../sass/Dowiązanie do _variables.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,YAAY;AAIZ,gBAAgB;AAGhB,WAAW"
+}
