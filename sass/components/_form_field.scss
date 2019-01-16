@@ -16,27 +16,53 @@
 
 .main-window {
     background: #ffffff;
-    display: flex;
     min-height: 400px;
+    max-width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
-
+.main-second-window {
+    margin: 20px 20px 20px;
+  }
 .main-first-window {
     margin: 80px 20px 20px;
   }
 
-.main-windows-title {
+.main-window-title {
     height: 50px;
     width: 100%;
     border-bottom: 1px solid #e3e3e3;  
-    h1 {
+    & h1 {
       color: #a6a6a6;
       text-transform: uppercase;
       font-size: 16px;
       font-weight: 500;
-      padding: 0 20px;
+      
       font-family: 'Roboto', sans-serif;
       padding: 5px 20px;
     }
 }
 
+.btn-small {
+  height: 41px;
+  width: 40px;
+  margin-left: 15px;
+  background: #f58220;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+   em {
+      color: white;
+    }  
+}
+
+.btn {
+  height: 40px;
+  width: 127px;
+  background: #f58220;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
