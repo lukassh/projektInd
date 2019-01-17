@@ -11,16 +11,15 @@ body {
 
 .container { /* container */
   margin: 0 auto;
-  max-width: 1280px;
   width: 100%;  
 } 
 
 
 .sidebar { /*sidebar component */
+  z-index: 4;
   background: #1F1F1F;
   width: 188px;
   height: 100vh;
-  float: left;
   position: fixed;
  
   .top {
@@ -45,10 +44,9 @@ body {
   } /* end of top */
 
   .nav-sidebar { /* sidebar menu - left */ 
-    font-family: Roboto;
     color: #999999;
         
-    div { 
+    li { 
       height: 40px;
       padding-left: 20px;
       border-left: 5px solid #1f1f1f;
@@ -66,7 +64,7 @@ body {
       color: #fff;
     }  
 
-    div:hover, .active-cell {
+    li:hover, .active-cell {
       border-left: 5px solid #f58220;
       cursor: pointer;
       color: #fff;
@@ -74,7 +72,7 @@ body {
       color: #fff;
     }
 
-    div:hover a {
+    li:hover a {
       color: #fff;
     }
 
@@ -123,10 +121,10 @@ body {
 } /* end of sidebar  */
 
 .header { /* header top begin */ 
+  z-index: 1;
   display: flex;
-  flex-direction: row;
   height: 60px;
-  width: 1092px;
+  width: 100%;
   background: #ffffff;
   position: fixed;
   border-bottom: 1px solid #e3e3e3;
@@ -187,16 +185,7 @@ body {
     }
 } /* end of header */ 
 
-.main { 
-  margin-left: 188px;
-  background: #f5f5f2;
-  width: 1092px;
-  float: left;
-}
 
-.main-first-window {
-    margin: 80px 20px 20px;
-  }
 /* grid  */
 
 .row::before, .row::after {
