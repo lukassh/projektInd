@@ -18,15 +18,17 @@
 .general-search {
    height: 100px;
    display: flex;
-   flex-direction: row;
+
    justify-content: center;
    align-items: center;
-   form {
-    display: flex;
-    flex-flow: row;
+   .form-class {
+    padding: 5px;
     border: 1px solid #e3e3e3;
     border-radius: 5px;
-    div {
+   }
+   form {
+    display: flex;
+    .horizontal-line {
       height: 40px;
       border-left: 1px solid #e3e3e3;
     }
@@ -34,33 +36,32 @@
       height: 40px;
       padding: 7px;
       border: none;
-      border-radius: 4px;
     }
   }
 }
 .general-data {
   padding-top: 30px;
-
-  .general-data-title {
-    color: #a6a6a6;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 42px;
-
-  }
-
   .general-data-value {
     color: black;
     font-size: 16px;
     font-weight: 500;
     line-height: 42px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 250px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .general-data-column {
+    display: flex;
+    justify-content: space-around;
 
   }
-
 }
 .general-charts {
   margin-top: 30px;
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
   h1 {
     color: #a6a6a6;
     text-transform: uppercase;
@@ -68,7 +69,7 @@
     font-weight: 700;
   }
   img {
-    width: 90%;
+    margin-top: 50px;
     margin: 20px 0;
   }
 }                   /* End of first windows Genereal statistic */
@@ -108,6 +109,10 @@
    .table-third em {
        opacity: 1;
     }
+  }
+  a {
+   color: black;
+
   }
 }
 .links {
