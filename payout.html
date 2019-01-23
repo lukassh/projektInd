@@ -2,7 +2,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8">
-		<title>Projekt indywidualny - Banners</title>
+		<title>Projekt indywidualny - Payout </title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="vendor/Glyphter.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -29,12 +29,12 @@
 
 				    <nav class="nav-sidebar">
 				    	<ul>
-				      		<li><a href="index.html"><em class="icon-general"></em>  General</a></li>
+				      		<li ><a href="index.html"><em class="icon-general"></em>  General</a></li>
 				      		<li><a href="details.html"><em class="icon-details"></em>  Details</a></li>
 				      		<li><a href="links.html"><em class="icon-links"></em>  Links</a></li>
-				      		<li class="active-cell"><a class="active-link" href=""><em class="icon-banners"></em>  Banners</a></li>
+				      		<li><a href="banners.html"><em class="icon-banners"></em>  Banners</a></li>
 				      		<li><a href="personal-data.html"><em class="icon-personaldata"></em>  Personal data</a></li>
-				      		<li><a href="payout.html"><em class="icon-payout"></em>  Payout</a></li>
+				      		<li class="active-cell"><a class="active-link"  href="payout.html"><em class="icon-payout"></em>  Payout</a></li>
 				      		<li><a href="postback.html"><em class="icon-postback"></em>  Postback</a></li>
 				      	</ul>
 				    </nav><!-- navi sidebar -->
@@ -99,64 +99,117 @@
 						      
 			    <div class="main-first-window main-window"> <!-- Okno general settings -->
 			     	
-						
-					<header  class="main-window-title">
+			     	<header class="main-window-title">
 			     		
-			     		<h1>banners</h1>
+			     		<h1>payout history</h1>
 			     	
 			     	</header>
 
-			     	<section class="links content-container">
-			     		
-			     		<section class="table-links">
-
-			     			<button class="btn">+add new</button>
-
-			     			<table>
-			     				<tr>
-			     					<td class="table-first">Banner main</td>
-			     					<td class="table-second">http://www.webside.com/bannermain.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				<tr>
-			     					<td class="table-first">Sign up banner</td>
-			     					<td class="table-second">http://www.webside.com/signup.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				<tr>
-			     					<td class="table-first">Baner left side</td>
-			     					<td class="table-second">http://www.webside.com/leftside.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				<tr>
-			     					<td class="table-first">Vertical banner</td>
-			     					<td class="table-second">http://www.webside.com/vert.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				<tr>
-			     					<td class="table-first">Front banner</td>
-			     					<td class="table-second">http://www.webside.com/front.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				<tr>
-			     					<td class="table-first">Horizontal banner</td>
-			     					<td class="table-second">http://www.webside.com/horizontal.gif</td>
-			     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
-			     				</tr>
-			     				
-
-			     			</table>
-
-			     			<button class="btn">+add new</button>
-			     		
-			     		</section>
-
+			     	<section class="general-search">
+			     			
+			     		<div class="form-class">
+				     		<form>
+				     			<input type="date" name="date-from">
+				     			<div class="horizontal-line"></div>
+				     			<input type="date" name="date-to">
+				     			<button class="btn-small"><em class="icon-refresh"></em></button>
+				     		</form>
+			     		</div>
 			     		
 
 			     	</section>
+			     	
+			     	<div class="main-line"></div>
+			     		
+			     	<section class="table-details">
 
+			     			<table>
+			     				<thead>
+			     					<tr>
+			     						<th>Date</th>
+			     						<th>Amount($)</th>
+			     						<th>Deal</th>
+			     						<th>Account</th>
+			     					</tr>
+			     				</thead>
+			     				<tr>
+			     					<td>17/08/02 (12:58)</td>
+			     					<td>34,425.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+			     				
+			     				<tr>
+			     					<td>15/08/02 (12:58)</td>
+			     					<td>29,436.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
 
-				</div> 	<!-- links -->	
+			     				<tr>
+			     					<td>17/08/02 (12:58)</td>
+			     					<td>34,425.00</td>
+			     					<<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     				<tr>
+			     					<td>15/08/02 (12:58)</td>
+			     					<td>29,436.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     				<tr>
+			     					<td>17/08/02 (12:58)</td>
+			     					<td>34,425.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     				<tr>
+			     					<td>15/08/02 (12:58)</td>
+			     					<td>29,436.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     				<tr>
+			     					<td>17/08/02 (12:58)</td>
+			     					<td>34,425.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     				<tr>
+			     					<td>15/08/02 (12:58)</td>
+			     					<td>29,436.00</td>
+			     					<td>cpl(200)</td>
+			     					<td>bank</td>
+			     				</tr>
+
+			     			</table>
+
+			     		<div class="main-line"></div>			     		
+			     	</section>
+			     	<ul class="under-list">
+			     				<li><a href=""><em class="icon-arrow-left"></em></a></li>
+			     				<li><a href="">1</a></li>
+			     				<li><a href="">2</a></li>
+			     				<li><a href="">3</a></li>
+			     				<li><a href="">4</a></li>
+			     				<li><a href="">5</a></li>
+			     				<li><a href="">6</a></li>
+			     				<li><a href="">7</a></li>
+			     				<li><a href="">8</a></li>
+			     				<li><a href="">9</a></li>
+			     				<li><a href=""><em class="icon-arrow-right"></em></a></li>
+			     	</ul>	
+
+			     		
+
+			    </div>
+
 			
 			</section> <!-- main -->
 	    
