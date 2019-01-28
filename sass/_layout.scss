@@ -2,6 +2,10 @@
 
 
 /* grid  */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .row::before, .row::after {
     content: "";
@@ -9,20 +13,5 @@
     clear: both;
 }
 
-@for $i from 1 through 12 {
-  .col-#{$i} {
-    width: percentage($i / 12);
-  }
-}
 
-@for $i from 0 through 12 {
-  .col-offset-#{$i} {
-    width: percentage($i / 12);
-  }
-}
                                 
- [class*='col-'] {
-    float: left;
-    min-height: 1px;
-
-}
