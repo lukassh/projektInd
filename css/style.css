@@ -867,6 +867,7 @@ body {
 .general-charts img {
   margin-top: 50px;
   margin: 20px 0;
+  max-width: 90%;
 }
 
 /* End of first windows Genereal statistic */
