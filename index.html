@@ -116,7 +116,7 @@
 					     			<input type="date" name="date-from">
 					     			<div class="horizontal-line"></div>
 					     			<input type="date" name="date-to">
-					     			<button class="btn-small"><em class="icon-refresh"></em></button>
+					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
 				     		
@@ -155,8 +155,11 @@
 					     	
 
 				     	<section class="general-charts content-container">
+				     		
 				     		<h1>Earnings chart</h1>
-					     	<img class="scroll-wrapper" src="images/graph.png" alt="Graph">
+				     		<div>
+					     		<img class="scroll-wrapper" src="images/graph.png" alt="Graph">
+					     	</div>
 
 				     	</section>
 				    </div> <!-- main windows -->
@@ -175,7 +178,7 @@
 				     		
 				     		<section class="table-links">
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 
 				     			<table class="scroll-wrapper">
 				     				<tr>
@@ -231,7 +234,7 @@
 
 				     			</table>
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 				     		
 				     		</section>
 
@@ -260,11 +263,11 @@
 				     	<section class="general-search">
 				     			
 				     		<div class="form-class">
-					     		<form>
+					     		<form action="" method="POST">
 					     			<input type="date" name="date-from">
 					     			<div class="horizontal-line"></div>
 					     			<input type="date" name="date-to">
-					     			<button class="btn-small"><em class="icon-refresh"></em></button>
+					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
 				     		
@@ -449,7 +452,7 @@
 				     		
 				     		<section class="table-links">
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 
 				     			<table class="scroll-wrapper">
 				     				<tr>
@@ -505,7 +508,7 @@
 
 				     			</table>
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 				     		
 				     		</section>
 
@@ -536,7 +539,7 @@
 				     		
 				     		<section class="table-links">
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 
 				     			<table class="scroll-wrapper">
 				     				<tr>
@@ -573,7 +576,7 @@
 
 				     			</table>
 
-				     			<button class="btn">+add new</button>
+				     			<button class="btn" type="submit">+add new</button>
 				     		
 				     		</section>
 
@@ -600,7 +603,7 @@
 			     	
 			     	</header>
 
-					    <form class="form-general content-container"> 	
+					    <form action="" method="POST" class="form-general content-container"> 	
 
 					     	<div class="form-data"><label>Name </label><input type="text" name="Name" placeholder="Leonardo"></div><br>
 					     	
@@ -613,7 +616,7 @@
 			    
 			    		<div class="main-line"></div>
 			   
-					    <form class="form-general content-container">		
+					    <form class="form-general content-container" action="" method="POST">		
 					     		
 					     	
 					     	<div class="form-data"><label>Skype </label><input type="text" name="skype" placeholder="Leonardo.D"></div><br>
@@ -631,7 +634,7 @@
 
 			     		<div class="main-line"></div>
 
-					    <form class="form-general content-container">
+					    <form class="form-general content-container" action="" method="POST">
 
 					     	<div class="form-data"><label>Password </label><input type="Password" name="password"></div><br>
 					     			
@@ -641,7 +644,7 @@
 					     	<div class="main-line"></div>
 					     	
 
-					     	<button class="btn">Save</button>
+					     	<button class="btn" type="submit">Save</button>
 
 					    </form>
 
@@ -666,11 +669,11 @@
 				     	<section class="general-search">
 				     			
 				     		<div class="form-class">
-					     		<form>
+					     		<form action="" method="POST">
 					     			<input type="date" name="date-from">
 					     			<div class="horizontal-line"></div>
 					     			<input type="date" name="date-to">
-					     			<button class="btn-small"><em class="icon-refresh"></em></button>
+					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
 				     		
@@ -795,13 +798,13 @@
 				     		
 				     			<section>
 				     				<h1 class="default-h1">Signup</h1><br>
-				     				<textarea class="forms-border postback-textarea" cols="62" rows="10" ></textarea>
+				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" ></textarea>
 				     				
 				     			</section>
 
 				       			<section>
 				     				<h1 class="default-h1">Deposit</h1><br>
-				     				<textarea class="forms-border postback-textarea" cols="62" rows="10" ></textarea>
+				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" ></textarea>
 				     				
 				     			</section>
 
@@ -842,31 +845,37 @@
 				     	<section class="postback-last-to">
 				     			
 				     		<section class="postback-checkbox forms-border">
-				     			
-				     			<form>
-				     					
-				     				<h1 class="default-h1"><span>NOT</span> send statuses</h1>
-				     				
+				     			<h1 class="default-h1"><span>NOT</span> send statuses</h1>
+				     			<form action="" method="POST">
+				     								     								     				
 				     				<label><input type="checkbox" name="checkNumber">checkNumber</label>
+
 				     				<label><input type="checkbox" name="noAnswer"> noAnswer</label>
+
 				     				<label><input type="checkbox" name="noCall"> noCall</label>
+
 				     				<label><input type="checkbox" name="callAgain"> callAgain</label>
+
 				     				<label><input type="checkbox" name="nextOption"> nextOption</label>
+
 				     				<label><input type="checkbox" name="lastOption"> lastOption</label>
+
 				     			</form>
 
 				     		</section>
 				     			
 				     		<section class="postback-progressbar forms-border">
 				     				<h1 class="default-h1">Send after:</h1>
-				     				<input type="range" name="Range" min="1" max="168" value="100">
+				     				<form>
+				     					<input type="range" name="Range" min="1" max="168" value="100">
+				     				</form>
 				     		</section>
 
 				     	</section>
 				     	
 				     	<section class="postback-button">
 				     		
-				     		<button class="btn">Create pixel</button>
+				     		<button type="submit" class="btn">Create pixel</button>
 				     		
 
 				     	</section>

@@ -87,6 +87,7 @@
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
+    padding-left: 20px;
   }
   img {
     margin-top: 50px;
@@ -255,7 +256,10 @@
   margin-top: 20px;  
   display: flex;
   justify-content: space-around;
-
+  textarea {
+  max-width: 90%;
+  resize: none;
+  }
   .first-textarea {
      
       .postback-textarea {
@@ -297,15 +301,16 @@
   }
   
   .postback-progressbar {
-    
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    input[type=range] {
-     width: 400px;
-
-
+    justify-content: flex-start;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      input[type=range] {
+       width: 400px;
+      }
     }
   }
 }
@@ -316,37 +321,150 @@
     justify-content: flex-end;
 }
 
-@media(min-width: 1200px) {
-  @include grid('xl');
-}
 
-@media(min-width: 992px) {
-  @include grid('lg');
-  
+
+@media (min-width: 993px) and (max-width: 1999px) {
+ 
   .content-container {
     width: 100%;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
   }
+
+  
 }
 
-@media(min-width: 768px) {
-  @include grid('md');
-  
+@media (min-width: 767px) and (max-width: 992px) {
+    
   .content-container {
     width: 100%;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
   }
-  .postback-form-textarea {
+
+  .sidebar {
+   max-width: 20%;
+   width: 100%;
+   .users-logon {
+    
+   }
+  }
+
+  .general-data {
+    .general-data-column {
+      flex-direction: column;
+    }
+    .general-data-value {
+      max-width: 100%;
+      justify-content: space-between;
+      padding-left: 10px;
+      margin: 0 auto;
+      line-height: 70px;
+      font-size: 22px;
+    } 
+  }
+
+  .general-charts {
+      display: flex;
+      padding-left: 20px;
+      flex-direction: column;
+
+     
+      img {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+  }
+  .table-links {
+
+    table {
+      display: flex;
+      justify-content: center;
+      padding-left: 20px;
+    }
+  }
+
+  .table-details {
+    table {
+      display: block;
+      th {
+        font-weight: 500;
+        padding-right: 30px; 
+        text-align: center;
+        font-size: 1.2em;
+      }
+      td {
+        font-size: 1em;
+        width: 100%;
+        padding-right: 10px;
+        text-align: center;
+      }
+    }
+   } 
+  
+  .form-general {
+    .form-data {
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 50px;
+      input {
+        width: 90%;
+      }
+    }
+  }  
+
+  .table-payout {
+    thead th {
+      font-size: 1.3em;
+    }
+    td {
+     font-size: 1.2em;
+    }
+  }
+
+ .postback-form-textarea, .postback-form-select, .postback-last-to {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  
+  .postback-last-to {
+    .postback-checkbox {
+        form {
+          height: 100%;
+          overflow-y: hidden;
+        }
+    }  
+    .postback-progressbar {
+      padding: 50px 0;
+      flex-direction: column;
+      form {
+        padding-top: 30px;
+      }
+    }
+  }
+
+  .scroll-wrapper {
+    
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .scroll-wrapper table {
+    width: 100%;
+    max-width: 100%;
   }
 
 
 }
 
-@media(max-width: 767px) {
-  @include grid('sm');
-
+@media (max-width: 767px) {
+  
   .sidebar {
     display: none;
     .users-logon {
@@ -385,12 +503,26 @@
       justify-content: space-between;
       padding-left: 20px;
       margin: 0 auto;
-    }
+      line-height: 70px;
+      font-size: 22px;
+    } 
   }
+  .general-charts {
+      display: flex;
+      padding-left: 20px;
+      flex-direction: column;
+
+      img {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+    }
   .table-links {
     padding-left: 20px;
     margin: 0 auto;
     font-size: 14px;
+
   }
   .under-list {
   
@@ -403,39 +535,40 @@
       flex-direction: column;
       justify-content: center;
       padding-left: 50px;
+      input {
+        width: 90%;
+      }
     }
   }
-  .scroll-wrapper {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
 
-  .scroll-wrapper table {
-    width: 100%;
-    max-width: 100%;
-  }
+  .main-line {
+      display: none;
+    }
+
   .postback-form-textarea, .postback-form-select, .postback-last-to {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 30px;
   }
-  .postback-checkbox {
-    overflow-y: hidden;
-    justify-content: center;
-    overflow-x: hidden;
-    margin: 20px 0;
-
-    line-height: 10px;
-    form {
-      height: 100%;
+  
+  .postback-last-to {
+    .postback-checkbox {
+        form {
+          height: 100%;
+          overflow-y: hidden;
+        }
+    }  
+    .postback-progressbar {
+      padding: 50px 0;
+      flex-direction: column;
+      form {
+        padding-top: 30px;
+      }
     }
   }
 
-  .postback-progressbar {
-    margin: 30px 0;
-  }
   
   .table-payout {
 
@@ -479,6 +612,7 @@
   }
 
   .table-details {
+    justify-content: center;
     thead {
       display: none;
     }

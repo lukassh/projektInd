@@ -862,6 +862,7 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
+  padding-left: 20px;
 }
 
 .general-charts img {
@@ -1058,6 +1059,11 @@ body {
   justify-content: space-around;
 }
 
+.postback-form-textarea textarea {
+  max-width: 90%;
+  resize: none;
+}
+
 .postback-form-textarea .first-textarea .postback-textarea {
   padding: 50px;
   color: #a6a6a6;
@@ -1095,12 +1101,17 @@ body {
 
 .postback-last-to .postback-progressbar {
   display: flex;
+  justify-content: flex-start;
+}
+
+.postback-last-to .postback-progressbar form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.postback-last-to .postback-progressbar input[type=range] {
+.postback-last-to .postback-progressbar form input[type=range] {
   width: 400px;
 }
 
@@ -1110,220 +1121,109 @@ body {
   justify-content: flex-end;
 }
 
-@media (min-width: 1200px) {
-  .col-xl-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-  }
-  .col-xl-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-  }
-  .col-xl-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .col-xl-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  .col-xl-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
-  }
-  .col-xl-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .col-xl-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-  }
-  .col-xl-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
-  }
-  .col-xl-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-  .col-xl-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-  }
-  .col-xl-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
-  }
-  .col-xl-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
+@media (min-width: 993px) and (max-width: 1999px) {
+  .content-container {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
   }
 }
 
-@media (min-width: 992px) {
-  .col-lg-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-  }
-  .col-lg-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-  }
-  .col-lg-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .col-lg-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  .col-lg-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
-  }
-  .col-lg-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .col-lg-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-  }
-  .col-lg-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
-  }
-  .col-lg-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-  .col-lg-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-  }
-  .col-lg-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
-  }
-  .col-lg-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+@media (min-width: 767px) and (max-width: 992px) {
   .content-container {
     width: 100%;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
   }
-}
-
-@media (min-width: 768px) {
-  .col-md-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-  }
-  .col-md-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-  }
-  .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .col-md-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  .col-md-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
-  }
-  .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .col-md-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-  }
-  .col-md-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
-  }
-  .col-md-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-  .col-md-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-  }
-  .col-md-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
-  }
-  .col-md-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .content-container {
+  .sidebar {
+    max-width: 20%;
     width: 100%;
-    margin: 0 auto;
   }
-  .postback-form-textarea {
+  .general-data .general-data-column {
+    flex-direction: column;
+  }
+  .general-data .general-data-value {
+    max-width: 100%;
+    justify-content: space-between;
+    padding-left: 10px;
+    margin: 0 auto;
+    line-height: 70px;
+    font-size: 22px;
+  }
+  .general-charts {
+    display: flex;
+    padding-left: 20px;
+    flex-direction: column;
+  }
+  .general-charts img {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .table-links table {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+  }
+  .table-details table {
+    display: block;
+  }
+  .table-details table th {
+    font-weight: 500;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  .table-details table td {
+    font-size: 1em;
+    width: 100%;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .form-general .form-data {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+  }
+  .form-general .form-data input {
+    width: 90%;
+  }
+  .table-payout thead th {
+    font-size: 1.3em;
+  }
+  .table-payout td {
+    font-size: 1.2em;
+  }
+  .postback-form-textarea, .postback-form-select, .postback-last-to {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  .postback-last-to .postback-checkbox form {
+    height: 100%;
+    overflow-y: hidden;
+  }
+  .postback-last-to .postback-progressbar {
+    padding: 50px 0;
+    flex-direction: column;
+  }
+  .postback-last-to .postback-progressbar form {
+    padding-top: 30px;
+  }
+  .scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .scroll-wrapper table {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 767px) {
-  .col-sm-1 {
-    flex: 0 0 8.33333%;
-    max-width: 8.33333%;
-  }
-  .col-sm-2 {
-    flex: 0 0 16.66667%;
-    max-width: 16.66667%;
-  }
-  .col-sm-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-  .col-sm-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-  }
-  .col-sm-5 {
-    flex: 0 0 41.66667%;
-    max-width: 41.66667%;
-  }
-  .col-sm-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  .col-sm-7 {
-    flex: 0 0 58.33333%;
-    max-width: 58.33333%;
-  }
-  .col-sm-8 {
-    flex: 0 0 66.66667%;
-    max-width: 66.66667%;
-  }
-  .col-sm-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-  .col-sm-10 {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
-  }
-  .col-sm-11 {
-    flex: 0 0 91.66667%;
-    max-width: 91.66667%;
-  }
-  .col-sm-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
   .sidebar {
     display: none;
   }
@@ -1356,6 +1256,18 @@ body {
     justify-content: space-between;
     padding-left: 20px;
     margin: 0 auto;
+    line-height: 70px;
+    font-size: 22px;
+  }
+  .general-charts {
+    display: flex;
+    padding-left: 20px;
+    flex-direction: column;
+  }
+  .general-charts img {
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }
   .table-links {
     padding-left: 20px;
@@ -1372,33 +1284,29 @@ body {
     justify-content: center;
     padding-left: 50px;
   }
-  .scroll-wrapper {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
+  .form-general .form-data input {
+    width: 90%;
   }
-  .scroll-wrapper table {
-    width: 100%;
-    max-width: 100%;
+  .main-line {
+    display: none;
   }
   .postback-form-textarea, .postback-form-select, .postback-last-to {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 30px;
   }
-  .postback-checkbox {
-    overflow-y: hidden;
-    justify-content: center;
-    overflow-x: hidden;
-    margin: 20px 0;
-    line-height: 10px;
-  }
-  .postback-checkbox form {
+  .postback-last-to .postback-checkbox form {
     height: 100%;
+    overflow-y: hidden;
   }
-  .postback-progressbar {
-    margin: 30px 0;
+  .postback-last-to .postback-progressbar {
+    padding: 50px 0;
+    flex-direction: column;
+  }
+  .postback-last-to .postback-progressbar form {
+    padding-top: 30px;
   }
   .table-payout thead {
     display: none;
@@ -1433,6 +1341,9 @@ body {
   }
   .table-payout td:nth-child(4)::before {
     content: "Account:";
+  }
+  .table-details {
+    justify-content: center;
   }
   .table-details thead {
     display: none;
