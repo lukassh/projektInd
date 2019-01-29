@@ -503,6 +503,7 @@ template {
   background: #f5f5f2;
   width: 100%;
   height: 100%;
+  transition: all 200ms linear;
 }
 
 .main-window {
@@ -585,6 +586,7 @@ body {
   width: 188px;
   height: 100vh;
   position: fixed;
+  transition: all 200ms linear;
   /* end of top */
   /* end of na */
 }
@@ -612,11 +614,13 @@ body {
   background: #fff;
   position: relative;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .sidebar .top .icon::before {
   content: " ";
   position: absolute;
+  cursor: pointer;
   width: 30px;
   height: 2px;
   background: #fff;
@@ -627,6 +631,7 @@ body {
 .sidebar .top .icon::after {
   content: " ";
   position: absolute;
+  cursor: pointer;
   width: 30px;
   height: 2px;
   background: #fff;
@@ -662,6 +667,9 @@ body {
   cursor: pointer;
   color: #fff;
   background: #282828;
+}
+
+.sidebar .nav-sidebar li:hover a, .sidebar .nav-sidebar .active-cell a {
   color: #fff;
 }
 
@@ -776,6 +784,38 @@ body {
 
 /* end of header */
 /* Page Links */
+.mobile-top {
+  z-index: 999;
+  width: 100%;
+  height: 20px;
+  position: fixed;
+}
+
+#sidebar.active {
+  width: 0;
+}
+
+#sidebar.active .nav-sidebar {
+  display: none;
+}
+
+#sidebar.active .users-logon {
+  display: none;
+}
+
+#sidebar.active .icon {
+  position: absolute;
+  left: 50px;
+}
+
+#sidebar.active .icon, #sidebar.active .icon::before, #sidebar.active .icon::after {
+  background: #000;
+}
+
+#main.wide {
+  padding-left: 20px;
+}
+
 .default-h1 {
   color: #a6a6a6;
   font-size: 16px;
@@ -830,6 +870,7 @@ body {
   border: none;
 }
 
+/* General data - main side */
 .general-data {
   padding-top: 30px;
 }
@@ -948,6 +989,7 @@ body {
   width: 350px;
 }
 
+/* Table - details section */
 .table-details {
   display: flex;
   flex-direction: column;
@@ -987,6 +1029,7 @@ body {
   cursor: pointer;
 }
 
+/* Table payouts section */
 .table-payout {
   display: flex;
   flex-direction: column;
@@ -1026,6 +1069,7 @@ body {
   cursor: pointer;
 }
 
+/* under table list */
 .under-list {
   display: flex;
   justify-content: center;
@@ -1086,6 +1130,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 30px 0;
+  padding: 40px 0;
 }
 
 .postback-last-to .postback-checkbox form {
@@ -1093,10 +1138,10 @@ body {
   display: flex;
   flex-direction: column;
   line-height: 40px;
-  height: 14em;
+  height: 10em;
   overflow-y: scroll;
   overflow-x: hidden;
-  min-width: 550px;
+  min-width: 350px;
 }
 
 .postback-last-to .postback-progressbar {
@@ -1112,7 +1157,8 @@ body {
 }
 
 .postback-last-to .postback-progressbar form input[type=range] {
-  width: 400px;
+  min-width: 350px;
+  width: 100%;
 }
 
 .postback-button {
@@ -1126,6 +1172,24 @@ body {
     width: 100%;
     padding: 10px;
     margin: 0;
+  }
+  .postback-form-textarea {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+  .postback-form-textarea .postback-textarea {
+    max-width: 450px;
+    width: 100%;
+  }
+  .postback-form-select {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .postback-form-select .postback-select {
+    max-width: 250px;
+    height: 40px;
+    background: #fff;
   }
 }
 
@@ -1163,6 +1227,11 @@ body {
   .table-links table {
     display: flex;
     justify-content: center;
+    padding-left: 20px;
+  }
+  .table-links .table-third em {
+    opacity: 1;
+    font-size: 1.2em;
     padding-left: 20px;
   }
   .table-details table {
@@ -1224,16 +1293,52 @@ body {
 }
 
 @media (max-width: 767px) {
-  .sidebar {
+  #sidebar.active {
+    width: 100%;
+    max-height: 340px;
+    height: 100%;
+  }
+  #sidebar.active .nav-sidebar {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 0;
+    margin-top: 0;
+    letter-spacing: 5px;
+    width: 100%;
+  }
+  #sidebar.active .users-logon {
     display: none;
+  }
+  #sidebar.active .icon {
+    display: flex;
+    justify-content: flex-start;
+  }
+  #sidebar.active .icon, #sidebar.active .icon::before, #sidebar.active .icon::after {
+    background: #fff;
+  }
+  #main.wide {
+    padding-top: 350px;
+  }
+  .sidebar {
+    height: 100%;
+    width: 0;
   }
   .sidebar .users-logon {
     display: none;
   }
-  .sidebar .nav-sidebar {
+  .sidebar .top .logo {
     display: none;
   }
-  .sidebar .top {
+  .sidebar .top .icon {
+    position: absolute;
+    right: -50px;
+    top: 10px;
+    background: #000;
+  }
+  .sidebar .top .icon::before, .sidebar .top .icon::after {
+    background: #000;
+  }
+  .sidebar .nav-sidebar {
     display: none;
   }
   .main {
@@ -1273,6 +1378,11 @@ body {
     padding-left: 20px;
     margin: 0 auto;
     font-size: 14px;
+  }
+  .table-links .table-third em {
+    opacity: 1;
+    font-size: 1.2em;
+    padding-left: 20px;
   }
   .under-list {
     max-width: 100%;

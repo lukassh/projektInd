@@ -13,6 +13,41 @@
 /* Pages / Views */
 @import "pages/registration.scss";
 
+.mobile-top {
+ 
+  z-index: 999;
+  width: 100%;
+  height: 20px;
+  position: fixed;
+}
+
+#sidebar.active {
+    width: 0;
+        
+    .nav-sidebar {
+      display: none;
+    }
+
+    .users-logon {
+      display: none;
+    }
+      
+    .icon {
+      position: absolute;
+      left: 50px;
+      
+      }
+
+    .icon, .icon::before, .icon::after {
+      background: #000;
+    }
+}
+
+#main.wide {
+  padding-left: 20px;
+}
+
+
  .default-h1 {
     color: #a6a6a6;
     font-size: 16px;
@@ -59,6 +94,7 @@
     }
   }
 }
+                      /* General data - main side */
 .general-data {
   padding-top: 30px;
   .general-data-value {
@@ -161,6 +197,8 @@
     }  
   }
 }
+
+                      /* Table - details section */ 
 .table-details {
   display: flex;
   flex-direction: column;
@@ -194,6 +232,7 @@
   }
  
 }
+                  /* Table payouts section */
 .table-payout {
   display: flex;
   flex-direction: column;
@@ -227,6 +266,7 @@
   }
  
 }
+                /* under table list */
 .under-list {
   display: flex;
   justify-content: center; 
@@ -286,6 +326,7 @@
      display: flex;
      justify-content: space-around;
      margin: 30px 0;
+     padding: 40px 0;
 
   .postback-checkbox {
     form {
@@ -293,10 +334,10 @@
       display: flex;
       flex-direction: column;
       line-height: 40px;
-      height: 14em;
+      height: 10em;
       overflow-y:  scroll;
       overflow-x: hidden;
-      min-width: 550px;
+      min-width: 350px;
     }
   }
   
@@ -309,7 +350,9 @@
       justify-content: center;
       align-items: center;
       input[type=range] {
-       width: 400px;
+       min-width: 350px;
+       width: 100%;
+
       }
     }
   }
@@ -331,7 +374,28 @@
     margin: 0;
   }
 
+  .postback-form-textarea {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    .postback-textarea {
+      max-width: 450px;
+      width: 100%;
+    }
+  }
+
+  .postback-form-select {
+
+    margin-top: 25px;  
+    display: flex;
+    justify-content: space-around;
   
+    .postback-select {
+          max-width: 250px;
+          height: 40px;
+          background: #fff;
+    }
+  }
+
 }
 
 @media (min-width: 767px) and (max-width: 992px) {
@@ -382,6 +446,11 @@
       display: flex;
       justify-content: center;
       padding-left: 20px;
+    }
+    .table-third em {
+       opacity: 1;
+       font-size: 1.2em;
+       padding-left: 20px;
     }
   }
 
@@ -464,19 +533,66 @@
 }
 
 @media (max-width: 767px) {
-  
-  .sidebar {
-    display: none;
+ 
+ #sidebar.active {
+    width: 100%;
+    max-height: 340px;
+    height: 100%;
+        
+    .nav-sidebar {
+      
+      display: flex;
+      justify-content: flex-start;
+      padding-top: 0;
+      margin-top: 0; 
+      letter-spacing: 5px; 
+      width: 100%;
+    }
+
     .users-logon {
       display: none;
+    }
+      
+    .icon {
+      display: flex;
+      justify-content: flex-start;     
+    }
 
+    .icon, .icon::before, .icon::after {
+      background: #fff;
+    }
+  }
+
+
+#main.wide {
+  padding-top: 350px;
+}
+
+.sidebar {
+
+    height: 100%;
+    width: 0;
+    .users-logon {
+      display: none;
+    }
+    .top {
+      .logo {
+        display: none;
+      }
+      .icon {
+        position: absolute;
+        right: -50px;
+        top: 10px;
+        background: #000;
+      }
+      .icon::before, .icon::after {
+        background: #000;
+      }
     }
     .nav-sidebar {
       display: none;
     }
-    .top {
-      display: none;
-    }
+      
   }
   .main {
     padding-left: 0;
@@ -522,7 +638,11 @@
     padding-left: 20px;
     margin: 0 auto;
     font-size: 14px;
-
+    .table-third em {
+       opacity: 1;
+       font-size: 1.2em;
+       padding-left: 20px;
+    }
   }
   .under-list {
   
@@ -672,6 +792,8 @@
       content: "Deals:";
     }
   }
+
+  
 }
 
 

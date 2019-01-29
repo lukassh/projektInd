@@ -21,7 +21,7 @@ body {
   width: 188px;
   height: 100vh;
   position: fixed;
- 
+   transition: all 200ms linear;
   .top {
     height: 60px;
     display: flex;
@@ -34,17 +34,19 @@ body {
     } /* end of logo class */ 
     
     .icon {
+      
       justify-content: flex-end;
       width: 30px;
       height: 2px;  
       background: #fff;
       position: relative;
       margin-top: 10px;
+      cursor: pointer;
     }
     .icon::before {
       content: " ";
       position: absolute;
-      
+      cursor: pointer;
       width: 30px;
       height: 2px;  
       background: #fff;
@@ -54,7 +56,7 @@ body {
    .icon::after {
       content: " ";
       position: absolute;
-      
+      cursor: pointer;
       width: 30px;
       height: 2px;  
       background: #fff;
@@ -90,7 +92,9 @@ body {
       cursor: pointer;
       color: #fff;
       background: #282828;
+      a {
       color: #fff;
+      }
     }
 
     li:hover a {
@@ -208,6 +212,3 @@ body {
 } /* end of header */ 
 
 /* Page Links */ 
-.form-links {
-  
-}
