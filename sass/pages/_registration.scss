@@ -82,12 +82,9 @@ body {
         font-weight: 400;
         line-height: 42px;
     }
-    
-    .active-link {
-      color: #fff;
-    }  
+ 
 
-    li:hover, .active-cell {
+    li:hover, .active-cell, li:active {
       border-left: 5px solid #f58220;
       cursor: pointer;
       color: #fff;
@@ -97,9 +94,9 @@ body {
       }
     }
 
-    li:hover a {
-      color: #fff;
-    }
+    
+
+   
 
     em {
       letter-spacing: 10px;

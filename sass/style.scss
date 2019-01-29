@@ -13,6 +13,30 @@
 /* Pages / Views */
 @import "pages/registration.scss";
 
+/*
+#general-search {
+
+}
+
+#details {
+  display: none;
+}
+#links {
+  display: none;
+}
+#banners {
+  display: none;
+}
+#personal-data {
+  display: none;
+}
+#payout {
+  display: none;
+}
+#postback {
+  display: none;
+}
+*/
 .mobile-top {
  
   z-index: 999;
@@ -106,6 +130,9 @@
     justify-content: space-between;
     min-width: 250px;
     border-bottom: 1px solid #e3e3e3;
+    .value-title {
+      color: #a6a6a6;
+    }
   }
   .general-data-column {
     display: flex;
@@ -134,7 +161,8 @@
 /* Windows no 2 */
 
 .table-links {
-   display: flex;
+  
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

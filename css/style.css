@@ -658,22 +658,14 @@ body {
   line-height: 42px;
 }
 
-.sidebar .nav-sidebar .active-link {
-  color: #fff;
-}
-
-.sidebar .nav-sidebar li:hover, .sidebar .nav-sidebar .active-cell {
+.sidebar .nav-sidebar li:hover, .sidebar .nav-sidebar .active-cell, .sidebar .nav-sidebar li:active {
   border-left: 5px solid #f58220;
   cursor: pointer;
   color: #fff;
   background: #282828;
 }
 
-.sidebar .nav-sidebar li:hover a, .sidebar .nav-sidebar .active-cell a {
-  color: #fff;
-}
-
-.sidebar .nav-sidebar li:hover a {
+.sidebar .nav-sidebar li:hover a, .sidebar .nav-sidebar .active-cell a, .sidebar .nav-sidebar li:active a {
   color: #fff;
 }
 
@@ -784,6 +776,30 @@ body {
 
 /* end of header */
 /* Page Links */
+/*
+#general-search {
+
+}
+
+#details {
+  display: none;
+}
+#links {
+  display: none;
+}
+#banners {
+  display: none;
+}
+#personal-data {
+  display: none;
+}
+#payout {
+  display: none;
+}
+#postback {
+  display: none;
+}
+*/
 .mobile-top {
   z-index: 999;
   width: 100%;
@@ -884,6 +900,10 @@ body {
   justify-content: space-between;
   min-width: 250px;
   border-bottom: 1px solid #e3e3e3;
+}
+
+.general-data .general-data-value .value-title {
+  color: #a6a6a6;
 }
 
 .general-data .general-data-column {
