@@ -94,7 +94,7 @@
 
 				    </div>
 
-				    <div class="header-cell" onclick="openModal(modalQuit)">
+				    <div class="header-cell" onclick="openModal('#modalQuit')">
 				    	<a href=""><em class="icon-quit"></em></a>
 				    </div>
 
@@ -104,7 +104,7 @@
 		<section id="main" class="main">
 			
 			<!-- general -->		
-				<section id="general-search">			      
+				<section id="general-search" class="sectionsWindow sectActive">			      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
 				     	
 				     	<header class="main-window-title">
@@ -255,7 +255,7 @@
 
 			<!-- details -->
 
-				<section id="details">
+				<section id="details" class="sectionsWindow">
 						
 							      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -442,7 +442,7 @@
 				</section> <!-- details -->
 
 				<!-- links -->
-				<section id="links">
+				<section id="links" class="sectionsWindow">
 					
 						      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -529,7 +529,7 @@
 
 			<!-- banners --> 
 
-				<section id="banners">
+				<section id="banners" class="sectionsWindow">
 					
 						      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -597,7 +597,7 @@
 
 			<!-- personal data -->
 
-				<section id="personal-data">
+				<section id="personal-data" class="sectionsWindow">
 					
 						      
 			    	<div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -661,7 +661,7 @@
 
 			<!-- payout -->
 
-				<section id="payout">
+				<section id="payout" class="sectionsWindow">
 					
 						      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -785,7 +785,7 @@
 
 			<!-- postback -->
 
-				<section id="postback">
+				<section id="postback" class="sectionsWindow">
 					
 						      
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
@@ -913,9 +913,72 @@
 
 				</section>
 			
+<!-- popup message -->
 
-			
+				<section id="modal-message" class="popup-message"> <!-- main -->
 
+					<div class="popup-message-window">
+						<div class="btn-close js--close-modal">x</div>
+						<header class="main-window-title">
+								     		
+							<h1>online chat with your personal manager</h1>
+								     	
+						</header>
+
+						<div class="modal-content">
+							
+							<div class="user-info">
+								<img src="images/user-michael.png">	
+								<div>
+									<h2>Michael E.</h2>
+									<div class="icon-online">online</div>
+								</div>
+							</div>
+
+							<div class="main-line"></div>
+							
+							<div class="chat-window">
+								
+								<div class="chat-question chat-common">Hello. Can I help you?</div><br>
+								<div class="chat-answer chat-common">Hello! I would like to know about Postback.</div><br>
+								<div class="chat-question chat-common">Ok. 5 min...</div><br>
+
+							</div>
+
+							<div class="main-line"></div>
+
+							<div class="cmd-line">
+								<input class="forms-border" type="text" name="entry-line">
+								<button class="btn">Send</button>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</section>
+
+<!-- popup login -->
+				<section id="overlay" class="popup-login show"> <!-- main -->
+
+					<div class="popup-login-window">
+						<div class="btn-close js--close-modal">x</div>
+						<header class="main-window-title">
+								     		
+							<h1>login</h1>
+								     	
+						</header>
+
+						<div class="modal-content">
+							<input class="forms-border" type="text" name="login_name" placeholder="login name">
+							<input class="forms-border" type="password" name="login_pass" placeholder="password">
+							<button class="btn">Enter</button>
+						</div>
+
+					</div>
+
+				</section>
 
 
 

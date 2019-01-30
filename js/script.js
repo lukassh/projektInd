@@ -95,4 +95,14 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" activenav", "");
     this.className += " activenav";
   });
-}
+};
+
+var siteData = document.getElementById('main');
+
+var windows = main.getElementsByClassName('sectionsWindow');
+
+for (var i = 0; i < windows.length; i++) {
+  btns[i].addEventListener('click', function() {
+    windows[i].classList.toggle('sectActive');
+  });
+ };
