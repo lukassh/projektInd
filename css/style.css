@@ -560,6 +560,28 @@ template {
   color: #fff;
 }
 
+.btn-grey {
+  height: 40px;
+  width: 127px;
+  background: #979797;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+}
+
+.icon-online {
+  width: 43px;
+  height: 18px;
+  border-radius: 3px;
+  background-color: #04ae00;
+  color: #fff;
+  font-weight: 300;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Sections */
 /* Pages / Views */
 * {
@@ -658,14 +680,14 @@ body {
   line-height: 42px;
 }
 
-.sidebar .nav-sidebar li:hover, .sidebar .nav-sidebar .active-cell, .sidebar .nav-sidebar li:active {
+.sidebar .nav-sidebar li:hover, .sidebar .nav-sidebar .activenav, .sidebar .nav-sidebar li:active {
   border-left: 5px solid #f58220;
   cursor: pointer;
   color: #fff;
   background: #282828;
 }
 
-.sidebar .nav-sidebar li:hover a, .sidebar .nav-sidebar .active-cell a, .sidebar .nav-sidebar li:active a {
+.sidebar .nav-sidebar li:hover a, .sidebar .nav-sidebar .activenav a, .sidebar .nav-sidebar li:active a {
   color: #fff;
 }
 
@@ -912,10 +934,11 @@ body {
 }
 
 .general-charts {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .general-charts h1 {
@@ -926,10 +949,9 @@ body {
   padding-left: 20px;
 }
 
-.general-charts img {
-  margin-top: 50px;
-  margin: 20px 0;
-  max-width: 90%;
+.general-charts canvas {
+  min-width: 900px;
+  min-height: 400px;
 }
 
 /* End of first windows Genereal statistic */
@@ -1185,6 +1207,53 @@ body {
   padding: 50px;
   display: flex;
   justify-content: flex-end;
+}
+
+/* Popups */
+.overlay {
+  /*popup - logout */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 30px;
+  display: none;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.modal {
+  max-width: 600px;
+  margin: auto;
+  background-color: #ffffff;
+  position: relative;
+  padding: 30px;
+  display: none;
+}
+
+.modal .modal-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.modal.show {
+  display: block;
 }
 
 @media (min-width: 993px) and (max-width: 1999px) {

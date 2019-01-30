@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="vendor/Glyphter.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	</head>
 
 	<body>
@@ -32,16 +33,16 @@
 		    
 		    
 
-				    <nav class="nav-sidebar">
-				    	<ul>
-				      		<li ><a href="#"><em class="icon-general"></em>  General</a></li>
-				      		<li ><a href="#details"><em class="icon-details"></em>  Details</a></li>
-				      		<li><a href="#links"><em class="icon-links"></em>  Links</a></li>
-				      		<li><a href="#banners"><em class="icon-banners"></em>  Banners</a></li>
-				      		<li><a href="#personal-data"><em class="icon-personaldata"></em>  Personal data</a></li>
-				      		<li><a href="#payout"><em class="icon-payout"></em>  Payout</a></li>
-				      		<li><a href="#postback"><em class="icon-postback"></em>  Postback</a></li>
-				      	</ul>
+				    <nav id="navSidebar" class="nav-sidebar">
+				    	<ul >
+							  <li class="navChoise activenav"><a href="#general-search"><em class="icon-general"></em>General</a></li>
+							  <li class="navChoise"><a href="#details"><em class="icon-details"></em>Details</a></li>
+							  <li class="navChoise"><a href="#links"><em class="icon-links"></em>Links</a></li>
+							  <li class="navChoise"><a href="#banners"><em class="icon-banners"></em>Banners</a></li>
+							  <li class="navChoise"><a href="#personal-data"><em class="icon-personaldata"></em>Personal data</a></li>
+							  <li class="navChoise"><a href="#payout"><em class="icon-payout"></em>Payout</a></li>
+							  <li class="navChoise"><a href="#postback"><em class="icon-postback"></em>Postback</a></li>
+						</ul> 
 				    </nav><!-- navi sidebar -->
 
 				    <div class="line"></div>
@@ -93,8 +94,8 @@
 
 				    </div>
 
-				    <div class="header-cell">
-				    	<a href="#"><em class="icon-quit"></em></a>
+				    <div class="header-cell" onclick="openModal(modalQuit)">
+				    	<a href=""><em class="icon-quit"></em></a>
 				    </div>
 
 			</section><!-- header -->
@@ -163,7 +164,7 @@
 				     		
 				     		<h1>Earnings chart</h1>
 				     		<div>
-					     		<img class="scroll-wrapper" src="images/graph.png" alt="Graph">
+					     		<canvas id="myChart"></canvas>
 					     	</div>
 
 				     	</section>
@@ -889,9 +890,41 @@
 			
 				</section> <!-- postback -->
 
+		
+
+			<!-- popups -->
+				
+				<section class="overlay" id="overlay"> <!-- main -->
+
+					<div class="modal" id="modalQuit">
+						<div class="btn-close js--close-modal">x</div>
+						<header class="main-window-title">
+								     		
+							<h1>do you really want to quit</h1>
+								     	
+						</header>
+
+						<div class="modal-content">
+							<button class="btn-grey js--close-modal">Cancel</button>
+							<button class="btn">Quit</button>
+						</div>
+
+					</div>
+
+				</section>
+			
+
+			
+
+
+
+
 		</section><!-- main -->
-	    
+	 
+
+
 	    
 	<script type="text/javascript" src="js/script.js"></script>  	
+	
 	</body>
 </html>

@@ -141,10 +141,12 @@
   }
 }
 .general-charts {
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   h1 {
     color: #a6a6a6;
     text-transform: uppercase;
@@ -152,11 +154,10 @@
     font-weight: 700;
     padding-left: 20px;
   }
-  img {
-    margin-top: 50px;
-    margin: 20px 0;
-    max-width: 90%;
-  }
+  canvas {
+    min-width: 900px;
+    min-height: 400px;
+  } 
 }                   /* End of first windows Genereal statistic */
 /* Windows no 2 */
 
@@ -393,6 +394,64 @@
 }
 
 
+
+/* Popups */ 
+
+
+
+
+
+.overlay { /*popup - logout */ 
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  overflow: auto;
+  padding: 30px; 
+
+  display: none;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.modal {
+  max-width: 600px;
+
+  margin: auto;
+  background-color: #ffffff;
+  position: relative;
+  padding: 30px;
+  display: none;
+  .modal-content {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.modal.show {
+  display: block;
+}
+
+ 
 
 @media (min-width: 993px) and (max-width: 1999px) {
  
