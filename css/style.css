@@ -915,10 +915,22 @@ body -webkit-scrollbar-thumb {
   border-left: 1px solid #e3e3e3;
 }
 
-.general-search form input {
+.general-search form input[type="date"] {
   height: 40px;
   padding: 7px;
   border: none;
+  background-image: url("/images/icons/calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 12px auto;
+  background-position: right 20px center;
+}
+
+.general-search form [type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.general-search form [type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
 
 /* General data - main side */
@@ -1163,11 +1175,17 @@ body -webkit-scrollbar-thumb {
 .postback-form-textarea textarea {
   max-width: 90%;
   resize: none;
+  padding: 10px;
 }
 
 .postback-form-textarea .first-textarea .postback-textarea {
   padding: 50px;
   color: #a6a6a6;
+}
+
+.postback-form-textarea textarea:focus {
+  border-bottom: 2px solid black;
+  color: black;
 }
 
 .postback-form-select {
@@ -1180,6 +1198,19 @@ body -webkit-scrollbar-thumb {
   width: 350px;
   height: 40px;
   background: #fff;
+  max-width: 250px;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  padding: 5px 30px 5px 10px;
+  font-size: 14px;
+  display: block;
+  background-image: url("/images/icons/arrow-down.svg");
+  background-size: 12px auto;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
 }
 
 .postback-last-to {
@@ -1449,11 +1480,6 @@ body -webkit-scrollbar-thumb {
     margin-top: 25px;
     display: flex;
     justify-content: space-around;
-  }
-  .postback-form-select .postback-select {
-    max-width: 250px;
-    height: 40px;
-    background: #fff;
   }
 }
 

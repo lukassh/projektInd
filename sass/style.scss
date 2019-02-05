@@ -89,17 +89,31 @@
     padding: 5px;
     border: 1px solid #e3e3e3;
     border-radius: 5px;
+
    }
+
    form {
     display: flex;
     .horizontal-line {
       height: 40px;
       border-left: 1px solid #e3e3e3;
     }
-    input {
+   
+    input[type="date"] {
       height: 40px;
       padding: 7px;
       border: none;
+      background-image: url('/images/icons/calendar.svg');
+      background-repeat: no-repeat;
+      background-size: 12px auto;
+      background-position: right 20px center;
+
+    }
+    [type="date"]::-webkit-inner-spin-button {
+      display: none;
+    }
+    [type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
     }
   }
 }
@@ -315,6 +329,7 @@
   textarea {
   max-width: 90%;
   resize: none;
+  padding: 10px;
   }
   .first-textarea {
 
@@ -323,6 +338,10 @@
           color: #a6a6a6;
       }
     }
+  textarea:focus {
+    border-bottom: 2px solid black;
+    color: black;
+  }
 }
 .postback-form-select {
 
@@ -334,6 +353,23 @@
         width: 350px;
         height: 40px;
         background: #fff;
+
+         
+         max-width: 250px;
+        height: 40px;
+        -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #ffffff;
+            padding: 5px 30px 5px 10px;
+            font-size: 14px;
+            display: block;
+            background-image: url('/images/icons/arrow-down.svg');
+            background-size: 12px auto;
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+          
+    
   }
 }
 
@@ -621,11 +657,7 @@
     display: flex;
     justify-content: space-around;
 
-    .postback-select {
-          max-width: 250px;
-          height: 40px;
-          background: #fff;
-    }
+   
   }
 
 }
