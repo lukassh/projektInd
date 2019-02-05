@@ -4,12 +4,12 @@ function toggleSidebar(){
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('main').classList.toggle('wide');
 }
-
-document.querySelector('.icon').addEventListener('click', function(e) {
+/*
+document.querySelector('#icon').addEventListener('click', function(e) {
   e.preventDefault();
   toggleSidebar()
 });
-
+*/
 // Graph 
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -89,20 +89,15 @@ var btnContainer = document.getElementById("navSidebar");
 var btns = btnContainer.getElementsByClassName("navChoise");
 
 
+
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("activenav");
-    current[0].className = current[0].className.replace(" activenav", "");
-    this.className += " activenav";
+    var current = document.querySelector(".activenav");
+    current.classList.remove("activenav");
+    this.classList.add("activenav");
+    document.querySelector(".sectionsWindow.sectActive").classList.remove('sectActive');
+    var newSlide = this.children[0].getAttribute('href')
+    document.querySelector(newSlide).classList.add('sectActive')
   });
 };
 
-var siteData = document.getElementById('main');
-
-var windows = main.getElementsByClassName('sectionsWindow');
-
-for (var i = 0; i < windows.length; i++) {
-  btns[i].addEventListener('click', function() {
-    windows[i].classList.toggle('sectActive');
-  });
- };

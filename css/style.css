@@ -503,12 +503,14 @@ template {
   background: #f5f5f2;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   transition: all 200ms linear;
 }
 
 .main-window {
   background: #ffffff;
   min-height: 400px;
+  height: 100%;
   max-width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -582,6 +584,19 @@ template {
   align-items: center;
 }
 
+.scrollbarr::-webkit-scrollbar-track {
+  background-color: #9c9c9c;
+}
+
+.scrollbarr::-webkit-scrollbar {
+  width: 16px;
+  background-color: #9c9c9c;
+}
+
+.scrollbarr::-webkit-scrollbar-thumb {
+  background-color: #e3e3e3;
+}
+
 /* Sections */
 /* Pages / Views */
 * {
@@ -593,6 +608,20 @@ template {
 body {
   background: #161616;
   font-family: 'Roboto', sans-serif;
+  min-width: 400px;
+}
+
+body -webkit-scrollbar-track {
+  background-color: #9c9c9c;
+}
+
+body -webkit-scrollbar {
+  width: 16px;
+  background-color: #9c9c9c;
+}
+
+body -webkit-scrollbar-thumb {
+  background-color: #e3e3e3;
 }
 
 .container {
@@ -632,7 +661,7 @@ body {
 .sidebar .top .icon {
   justify-content: flex-end;
   width: 30px;
-  height: 2px;
+  height: 3px;
   background: #fff;
   position: relative;
   margin-top: 10px;
@@ -644,7 +673,7 @@ body {
   position: absolute;
   cursor: pointer;
   width: 30px;
-  height: 2px;
+  height: 3px;
   background: #fff;
   top: 7px;
   left: 0;
@@ -655,7 +684,7 @@ body {
   position: absolute;
   cursor: pointer;
   width: 30px;
-  height: 2px;
+  height: 3px;
   background: #fff;
   top: -7px;
   left: 0;
@@ -798,6 +827,10 @@ body {
 
 /* end of header */
 /* Page Links */
+.sectionsWindow {
+  display: none;
+}
+
 .sectActive {
   display: block;
 }
@@ -851,7 +884,7 @@ body {
 }
 
 .main-line {
-  width: 100;
+  width: 100%;
   height: 1px;
   border-bottom: 1px solid #e3e3e3;
 }
@@ -929,9 +962,11 @@ body {
   padding-left: 20px;
 }
 
-.general-charts canvas {
-  min-width: 900px;
-  min-height: 400px;
+.general-charts #myChart {
+  min-width: 600px;
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
 }
 
 /* End of first windows Genereal statistic */
@@ -1176,11 +1211,62 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* suwak */
 }
 
 .postback-last-to .postback-progressbar form input[type=range] {
-  min-width: 350px;
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 500px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]:focus {
+  outline: none;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #e3e3e3;
+  position: relative;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]:active {
+  background: #f5811f;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-webkit-progress-inner-element {
+  background-color: orange;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-webkit-slider-thumb {
+  position: absolute;
+  top: 25px;
+  height: 0;
+  width: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid #f5811f;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f5811f;
+}
+
+.postback-last-to .postback-progressbar form .labels {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .postback-button {
@@ -1242,49 +1328,35 @@ body {
 }
 
 /* popup - message */
-.popup-message {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  display: none;
-}
-
-.popup-message .popup-message-window {
-  width: 80%;
-  min-height: 60%;
+.popup-message-window {
   background: #fff;
+  max-width: 800px;
+  width: 100%;
   position: relative;
 }
 
-.popup-message .popup-message-window .modal-content .user-info {
+.popup-message-window .modal-content-message .user-info {
   display: flex;
   justify-content: flex-start;
   padding: 20px;
 }
 
-.popup-message .popup-message-window .modal-content .user-info img {
+.popup-message-window .modal-content-message .user-info img {
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.popup-message .popup-message-window .modal-content .user-info h2 {
+.popup-message-window .modal-content-message .user-info h2 {
   font-size: 30px;
   font-weight: 500;
 }
 
-.popup-message .popup-message-window .modal-content .chat-window {
+.popup-message-window .modal-content-message .chat-window {
   height: 300px;
   padding: 20px 0 0 20px;
 }
 
-.popup-message .popup-message-window .modal-content .chat-window .chat-common {
+.popup-message-window .modal-content-message .chat-window .chat-common {
   font-size: 14px;
   line-height: 42px;
   font-weight: 300;
@@ -1295,13 +1367,13 @@ body {
   display: inline-block;
 }
 
-.popup-message .popup-message-window .modal-content .chat-window .chat-question {
+.popup-message-window .modal-content-message .chat-window .chat-question {
   color: #333333;
   background-color: #f3f3f1;
   border-radius: 0 4px 4px 4px;
 }
 
-.popup-message .popup-message-window .modal-content .chat-window .chat-question::before {
+.popup-message-window .modal-content-message .chat-window .chat-question::before {
   content: '';
   width: 12px;
   height: 12px;
@@ -1311,13 +1383,13 @@ body {
   background-image: linear-gradient(45deg, #f3f3f1 50%, transparent 50%);
 }
 
-.popup-message .popup-message-window .modal-content .chat-window .chat-answer {
+.popup-message-window .modal-content-message .chat-window .chat-answer {
   color: #ffffff;
   background-color: #bababa;
   border-radius: 4px 4px 0 4px;
 }
 
-.popup-message .popup-message-window .modal-content .chat-window .chat-answer::before {
+.popup-message-window .modal-content-message .chat-window .chat-answer::before {
   content: '';
   width: 12px;
   height: 12px;
@@ -1327,46 +1399,32 @@ body {
   background-image: linear-gradient(-135deg, #bababa 50%, transparent 50%);
 }
 
-.popup-message .popup-message-window .modal-content .cmd-line {
+.popup-message-window .modal-content-message .cmd-line {
   padding: 20px;
   display: flex;
   justify-content: space-around;
 }
 
-.popup-message .popup-message-window .modal-content .cmd-line input {
+.popup-message-window .modal-content-message .cmd-line input {
   width: 80%;
   height: 40px;
   padding-left: 10px;
 }
 
 /* popup login */
-.popup-login {
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  display: none;
-}
-
-.popup-login .popup-login-window {
+.popup-login-window {
   width: 700px;
   height: 170px;
   background: #fff;
   position: relative;
 }
 
-.popup-login .popup-login-window input {
+.popup-login-window input {
   height: 40px;
   width: 200px;
 }
 
-.popup-login .popup-login-window .modal-content {
+.popup-login-window .modal-content {
   height: 100px;
   display: flex;
   justify-content: space-around;
@@ -1425,10 +1483,11 @@ body {
     padding-left: 20px;
     flex-direction: column;
   }
-  .general-charts img {
-    display: flex;
+  .general-charts #myChart {
+    min-width: 500px;
     width: 100%;
-    justify-content: center;
+    min-height: 150px;
+    height: 100%;
   }
   .table-links table {
     display: flex;
@@ -1559,6 +1618,22 @@ body {
     bottom: 0;
     width: 100%;
   }
+  .general-search {
+    height: 100%;
+    margin-top: 20px;
+  }
+  .general-search form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .general-search form input {
+    border: 1px solid #a6a6a6;
+    justify-content: center;
+  }
+  .general-search form button {
+    margin: 10px auto;
+  }
   .general-data .general-data-column {
     flex-direction: column;
   }
@@ -1575,20 +1650,22 @@ body {
     padding-left: 20px;
     flex-direction: column;
   }
-  .general-charts img {
-    display: flex;
+  .general-charts #myChart {
+    min-width: 200px;
+    max-width: 400px;
     width: 100%;
-    justify-content: center;
+    min-height: 100px;
+    height: 100%;
   }
   .table-links {
-    padding-left: 20px;
+    padding-left: 10px;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: .8em;
   }
   .table-links .table-third em {
     opacity: 1;
-    font-size: 1.2em;
-    padding-left: 20px;
+    font-size: 1em;
+    padding-left: 10px;
   }
   .under-list {
     max-width: 100%;

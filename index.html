@@ -2,6 +2,7 @@
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Projekt indywidualny</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="vendor/Glyphter.css">
@@ -12,26 +13,26 @@
 
 	<body>
 
-		    <!-- sidebar --> 
+		    <!-- sidebar -->
 		    <section id="sidebar" class="sidebar"> <!-- sidebar -->
-		      
+
 			      <div class="top">
-				      
+
 				      <div class="logo">
-				      	
+
 				      		<a href="#"><img src="images/logo.png" alt="Logo"></a>
-				      
-				      </div><!-- logo -->	
-				     
-				      <div id="icon">
-				      
+
+				      </div><!-- logo -->
+
+				      <div id="icon" onclick="toggleSidebar()">
+
 				      		<div class="icon"></div>
-				      
+
 				      </div> <!-- hamburger -->
-				  
+
 				   </div><!-- top -->
-		    
-		    
+
+
 
 				    <nav id="navSidebar" class="nav-sidebar">
 				    	<ul >
@@ -42,23 +43,23 @@
 							  <li class="navChoise"><a href="#personal-data"><em class="icon-personaldata"></em>Personal data</a></li>
 							  <li class="navChoise"><a href="#payout"><em class="icon-payout"></em>Payout</a></li>
 							  <li class="navChoise"><a href="#postback"><em class="icon-postback"></em>Postback</a></li>
-						</ul> 
+						</ul>
 				    </nav><!-- navi sidebar -->
 
 				    <div class="line"></div>
 
 				    <section class="users-logon">
-				      	
+
 				    	<h1>Your manager</h1>
-				      		
+
 				    	<div>
-				      		
+
 				    		<div class="user-picture"><img src="images/photo.jpg" alt="user-photo"></div>
 
 				    		<div class="lights-logged"></div>
-				      		
+
 				    		<div class="user-description">Mikhael E.</div>
-				      		
+
 				    	</div>
 
 				    </section><!-- user logon sidebar -->
@@ -69,54 +70,54 @@
 
 
 			<section class="header"> <!-- header -->
-				   
+
 				    <div class="header-cell"></div>
-				    
+
 				    <div class="header-cell">
-				    
+
 				    	<div><em class="icon-wallet"></em></div>
 				    	<div><h1>$1,500.00</h1></div>
-				    	<div><em class="icon-arrow-down"></em></div>	
-				    
+				    	<div><em class="icon-arrow-down"></em></div>
+
 				   	</div>
-				    
-				    <div class="header-cell">
+
+				    <div class="header-cell" onclick="openModal('#modalMessage')">
 				    	<em class="icon-notification"></em>
 				    	<div class="lights-logged"></div>
 				    </div>
 
 				    <div class="header-cell">
-				    	
+
 				    	<em class="icon-profile"></em>
-				    	
-				    	<h2>Leonardo Dicaprio</h2>
+
+				    	<a href="#"><h2 onclick="openModal('#modalLogin')">Leonardo Dicaprio</h2></a>
 
 
 				    </div>
 
 				    <div class="header-cell" onclick="openModal('#modalQuit')">
-				    	<a href=""><em class="icon-quit"></em></a>
+				    	<a href="#"><em class="icon-quit"></em></a>
 				    </div>
 
 			</section><!-- header -->
 
 	<!-- main sections -->
 		<section id="main" class="main">
-			
-			<!-- general -->		
-				<section id="general-search" class="sectionsWindow sectActive">			      
+
+			<!-- general -->
+				<section id="general-search" class="sectionsWindow sectActive">
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
+
 				     	<header class="main-window-title">
-				     		
+
 				     		<h1>general statistic</h1>
-				     	
+
 				     	</header>
 
 
-				     	
+
 				     	<section class="general-search">
-				     			
+
 				     		<div class="form-class">
 					     		<form>
 					     			<input type="date" name="date-from">
@@ -125,16 +126,16 @@
 					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
-				     		
+
 
 				     	</section>
 				     	<div class="main-line"></div>
-				     	
+
 
 				     	<section class="general-data content-container">
-				     		     			
-				     		<div class="general-data-column">	
-				     			
+
+				     		<div class="general-data-column">
+
 				     			<div class="general-data-value">
 				     				<p class="value-title">Visit Signups</p>
 				     				<p>124</p>
@@ -145,7 +146,7 @@
 				     				<p>445</p>
 				     			</div>
 				     		</div>
-				     		<div class="general-data-column">	
+				     		<div class="general-data-column">
 					     		<div class="general-data-value">
 					     			<p class="value-title">Net deposit</p>
 					     			<p>564</p>
@@ -154,14 +155,14 @@
 				     				<p class="value-title">Turn over</p>
 				     				<p>432</p>
 				     			</div>
-					     	</div>	
-					     	
+					     	</div>
+
 				     	</section>
-					     	
-					     	
+
+
 
 				     	<section class="general-charts content-container">
-				     		
+
 				     		<h1>Earnings chart</h1>
 				     		<div>
 					     		<canvas id="myChart"></canvas>
@@ -170,18 +171,18 @@
 				     	</section>
 				    </div> <!-- main windows -->
 
-				    
-				   		   
+
+
 				   	<div class="main-second-window main-window">
-						
+
 						<header  class="main-window-title">
-				     		
+
 				     		<h1>links</h1>
-				     	
+
 				     	</header>
 
 				     	<section class="links content-container scroll-wrapper">
-				     		
+
 				     		<section class="table-links">
 
 				     			<button class="btn" type="submit">+add new</button>
@@ -241,33 +242,33 @@
 				     			</table>
 
 				     			<button class="btn" type="submit">+add new</button>
-				     		
+
 				     		</section>
 
-				     		
+
 
 				     	</section>
 
 
-					</div> 	<!-- links -->	
-			
+					</div> 	<!-- links -->
+
 				</section> <!-- general search -->
 
 			<!-- details -->
 
 				<section id="details" class="sectionsWindow">
-						
-							      
+
+
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
+
 				     	<header class="main-window-title">
-				     		
+
 				     		<h1>details</h1>
-				     	
+
 				     	</header>
 
 				     	<section class="general-search">
-				     			
+
 				     		<div class="form-class">
 					     		<form action="" method="POST">
 					     			<input type="date" name="date-from">
@@ -276,16 +277,16 @@
 					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
-				     		
+
 
 				     	</section>
-				     	
+
 				     	<div class="main-line"></div>
-				     		
+
 				     	<section class="table-details scroll-wrapper">
 
 				     			<table>
-				     				
+
 				     				<thead>
 					     				<tr>
 					     					<th>Tracker name</th>
@@ -299,7 +300,7 @@
 					     					<th>Payouts($)</th>
 					     					<th>Turnover</th>
 					     					<th>Deal</th>
-					     				</tr>	
+					     				</tr>
 				     				</thead>
 
 				     				<tbody>
@@ -316,7 +317,7 @@
 					     					<td>421,342.00</td>
 					     					<td>cpl (200)</td>
 					     				</tr>
-					     				
+
 					     				<tr>
 					     					<td>aff/leo_test</td>
 					     					<td>15/08/02 (12:58)</td>
@@ -418,7 +419,7 @@
 
 				     			</table>
 
-				     		<div class="main-line"></div>			     		
+				     		<div class="main-line"></div>
 				     	</section>
 				     	<ul class="under-list">
 				     				<li><a href=""><em class="icon-arrow-left"></em></a></li>
@@ -432,30 +433,30 @@
 				     				<li><a href="">8</a></li>
 				     				<li><a href="">9</a></li>
 				     				<li><a href=""><em class="icon-arrow-right"></em></a></li>
-				     	</ul>	
+				     	</ul>
 
-				     		
+
 
 				    </div>
 
-				
+
 				</section> <!-- details -->
 
 				<!-- links -->
 				<section id="links" class="sectionsWindow">
-					
-						      
+
+
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
-							
+
+
 						<header  class="main-window-title">
-				     		
+
 				     		<h1>links</h1>
-				     	
+
 				     	</header>
 
 				     	<section class="links content-container">
-				     		
+
 				     		<section class="table-links scroll-wrapper">
 
 				     			<button class="btn" type="submit">+add new</button>
@@ -515,34 +516,34 @@
 				     			</table>
 
 				     			<button class="btn" type="submit">+add new</button>
-				     		
+
 				     		</section>
 
-				     		
+
 
 				     	</section>
 
 
-					</div> 	<!-- links -->	
-			
-				</section> 
+					</div> 	<!-- links -->
 
-			<!-- banners --> 
+				</section>
+
+			<!-- banners -->
 
 				<section id="banners" class="sectionsWindow">
-					
-						      
+
+
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
-							
+
+
 						<header  class="main-window-title">
-				     		
+
 				     		<h1>banners</h1>
-				     	
+
 				     	</header>
 
 				     	<section class="links content-container">
-				     		
+
 				     		<section class="table-links scroll-wrapper">
 
 				     			<button class="btn" type="submit">+add new</button>
@@ -578,62 +579,62 @@
 				     					<td class="table-second">http://www.webside.com/horizontal.gif</td>
 				     					<td class="table-third"><a href="#"><em class="icon-links"></em></a><em class="icon-trash"></em></td>
 				     				</tr>
-				     				
+
 
 				     			</table>
 
 				     			<button class="btn" type="submit">+add new</button>
-				     		
+
 				     		</section>
 
-				     		
+
 
 				     	</section>
 
 
-					</div> 	<!-- links -->	
-			
+					</div> 	<!-- links -->
+
 				</section> <!-- banners -->
 
 			<!-- personal data -->
 
 				<section id="personal-data" class="sectionsWindow">
-					
-						      
+
+
 			    	<div class="main-first-window main-window"> <!-- Okno general settings -->
-			     	
-						
+
+
 					<header  class="main-window-title">
-			     		
+
 			     		<h1>personal data</h1>
-			     	
+
 			     	</header>
 
-					    <form action="" method="POST" class="form-general content-container"> 	
+					    <form action="" method="POST" class="form-general content-container">
 
 					     	<div class="form-data"><label>Name </label><input type="text" name="Name" placeholder="Leonardo"></div><br>
-					     	
+
 					     	<div class="form-data"><label>Surname </label><input type="text" name="Surname" placeholder="Dicaprio"></div><br>
-					     	
+
 					     	<div class="form-data"><label>E-mail </label><input type="email" name="email" placeholder="leo@gmail.com"></div><br>
-					     	
+
 					     	<div class="form-data"><label>Phone number </label><input type="number" name="phone" placeholder="+1 432 555 00 44"></div><br>
 					    </form>
-			    
+
 			    		<div class="main-line"></div>
-			   
-					    <form class="form-general content-container" action="" method="POST">		
-					     		
-					     	
+
+					    <form class="form-general content-container" action="" method="POST">
+
+
 					     	<div class="form-data"><label>Skype </label><input type="text" name="skype" placeholder="Leonardo.D"></div><br>
-					     			
+
 					     	<div class="form-data"><label>ICQ </label><input type="text" name="ICQ"></div><br>
-					     			
-					     	<div class="form-data"><label>Msn </label><input type="text" name="msn"></div><br>		
-					     		
-					     		
+
+					     	<div class="form-data"><label>Msn </label><input type="text" name="msn"></div><br>
+
+
 					     	<div class="main-line"></div>
-					     	
+
 					     	<div class="form-data"><label>Wallet </label><input type="text" name="wallet" value=""></div><br>
 					    </form>
 
@@ -643,37 +644,37 @@
 					    <form class="form-general content-container" action="" method="POST">
 
 					     	<div class="form-data"><label>Password </label><input type="Password" name="password"></div><br>
-					     			
+
 					     	<div class="form-data"><label>Repeat </label><input type="Password" name="password-r"></div><br>
-					     
+
 
 					     	<div class="main-line"></div>
-					     	
+
 
 					     	<button class="btn" type="submit">Save</button>
 
 					    </form>
 
 
-					</div> 	<!--  -->	
-			
+					</div> 	<!--  -->
+
 				</section> <!-- personal data -->
 
 			<!-- payout -->
 
 				<section id="payout" class="sectionsWindow">
-					
-						      
+
+
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
+
 				     	<header class="main-window-title">
-				     		
+
 				     		<h1>payout history</h1>
-				     	
+
 				     	</header>
 
 				     	<section class="general-search">
-				     			
+
 				     		<div class="form-class">
 					     		<form action="" method="POST">
 					     			<input type="date" name="date-from">
@@ -682,23 +683,23 @@
 					     			<button class="btn-small" type="submit"><em class="icon-refresh"></em></button>
 					     		</form>
 				     		</div>
-				     		
+
 
 				     	</section>
-				     	
+
 				     	<div class="main-line"></div>
-				     		
+
 				     	<section class="table-payout scroll-wrapper">
 
 				     			<table>
 				     				<thead>
-				     					<tr>	
+				     					<tr>
 					     					<th>Date</th>
 					     					<th>Amount($)</th>
 					     					<th>Deal</th>
 					     					<th>Account</th>
 				     					</tr>
-				     					
+
 				     				</thead>
 				     				<tbody>
 					     				<tr>
@@ -707,7 +708,7 @@
 					     					<td>cpl(200)</td>
 					     					<td>bank</td>
 					     				</tr>
-					     				
+
 					     				<tr>
 					     					<td>15/08/02 (12:58)</td>
 					     					<td>29,436.00</td>
@@ -760,7 +761,7 @@
 
 				     			</table>
 
-				     		<div class="main-line"></div>			     		
+				     		<div class="main-line"></div>
 				     	</section>
 				     	<ul class="under-list">
 				     				<li><a href=""><em class="icon-arrow-left"></em></a></li>
@@ -774,47 +775,47 @@
 				     				<li><a href="">8</a></li>
 				     				<li><a href="">9</a></li>
 				     				<li><a href=""><em class="icon-arrow-right"></em></a></li>
-				     	</ul>	
+				     	</ul>
 
-				     		
+
 
 				    </div>
 
-			
+
 				</section> <!-- payout -->
 
 			<!-- postback -->
 
 				<section id="postback" class="sectionsWindow">
-					
-						      
+
+
 				    <div class="main-first-window main-window"> <!-- Okno general settings -->
-				     	
-							
+
+
 						<header  class="main-window-title">
-				     		
+
 				     		<h1>postback</h1>
-				     	
+
 				     	</header>
-						
+
 						<p class="postback-message"> You can instert some parameters in this postback: </p>
-				     	
+
 				     	<section class="postback-form-textarea">
-				     		
-				     		
+
+
 				     			<section>
 				     				<h1 class="default-h1">Signup</h1><br>
-				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" ></textarea>
-				     				
+				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" placeholder="crm_userId =%user_id% subid =%p%" ></textarea>
+
 				     			</section>
 
 				       			<section>
 				     				<h1 class="default-h1">Deposit</h1><br>
-				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" ></textarea>
-				     				
+				     				<textarea class="forms-border postback-textarea" name="message" cols="60" rows="10" placeholder="crm_userId =%user_id% subid =%p%"></textarea>
+
 				     			</section>
 
-				     		
+
 
 				     	</section>
 
@@ -845,15 +846,15 @@
 				     					<option>option 2</option>
 				     				</select>
 				     			</section>
-				     		
+
 				     	</section>
 
 				     	<section class="postback-last-to">
-				     			
+
 				     		<section class="postback-checkbox forms-border">
 				     			<h1 class="default-h1"><span>NOT</span> send statuses</h1>
-				     			<form action="" method="POST">
-				     								     								     				
+				     			<form  class="scrollbarr" action="" method="POST">
+
 				     				<label><input type="checkbox" name="checkNumber">checkNumber</label>
 
 				     				<label><input type="checkbox" name="noAnswer"> noAnswer</label>
@@ -869,39 +870,49 @@
 				     			</form>
 
 				     		</section>
-				     			
+
 				     		<section class="postback-progressbar forms-border">
 				     				<h1 class="default-h1">Send after:</h1>
 				     				<form>
-				     					<input type="range" name="Range" min="1" max="168" value="100">
-				     				</form>
+					     				<div class="labels">
+											  <label for="ranger:min" value="0">0</label>
+											  <label for="progressValueranger:max" value="168">168</label>
+										</div>
+
+										<input value="70" id="ranger" type="range" min="0" max="168"  class="slider" onchange="myFunction()">
+
+
+										<div class="progress-value" id=""></div>
+									</form>
+				     		
 				     		</section>
 
 				     	</section>
-				     	
+
 				     	<section class="postback-button">
-				     		
+
 				     		<button type="submit" class="btn">Create pixel</button>
-				     		
+
 
 				     	</section>
 
-					</div> 	<!-- window -->	
-			
+					</div> 	<!-- window -->
+
 				</section> <!-- postback -->
 
-		
+
 
 			<!-- popups -->
-				
+				<!-- modal quit -->
+
 				<section class="overlay" id="overlay"> <!-- main -->
 
 					<div class="modal" id="modalQuit">
 						<div class="btn-close js--close-modal">x</div>
 						<header class="main-window-title">
-								     		
+
 							<h1>do you really want to quit</h1>
-								     	
+
 						</header>
 
 						<div class="modal-content">
@@ -911,24 +922,40 @@
 
 					</div>
 
-				</section>
-			
-<!-- popup message -->
 
-				<section id="modal-message" class="popup-message"> <!-- main -->
+					<!-- modal login -->
 
-					<div class="popup-message-window">
+					<div class="modal popup-login-window" id="modalLogin">
 						<div class="btn-close js--close-modal">x</div>
 						<header class="main-window-title">
-								     		
-							<h1>online chat with your personal manager</h1>
-								     	
+
+							<h1>Login</h1>
+
 						</header>
 
 						<div class="modal-content">
-							
+							<input class="forms-border" type="text" name="login_name" placeholder="login name">
+							<input class="forms-border" type="password" name="login_pass" placeholder="password">
+							<button class="btn">Enter</button>
+						</div>
+
+					</div>
+
+
+					<!-- modal message -->
+
+					<div class="modal popup-message-window" id="modalMessage">
+						<div class="btn-close js--close-modal">x</div>
+						<header class="main-window-title">
+
+							<h1>online chat with your personal manager</h1>
+
+						</header>
+
+						<div class="modal-content-message">
+
 							<div class="user-info">
-								<img src="images/user-michael.png">	
+								<img src="images/user-michael.png">
 								<div>
 									<h2>Michael E.</h2>
 									<div class="icon-online">online</div>
@@ -936,9 +963,9 @@
 							</div>
 
 							<div class="main-line"></div>
-							
+
 							<div class="chat-window">
-								
+
 								<div class="chat-question chat-common">Hello. Can I help you?</div><br>
 								<div class="chat-answer chat-common">Hello! I would like to know about Postback.</div><br>
 								<div class="chat-question chat-common">Ok. 5 min...</div><br>
@@ -959,35 +986,16 @@
 
 				</section>
 
-<!-- popup login -->
-				<section  class="popup-login show"> <!-- main -->
-
-					<div class="popup-login-window">
-						<div class="btn-close js--close-modal">x</div>
-						<header class="main-window-title">
-								     		
-							<h1>login</h1>
-								     	
-						</header>
-
-						<div class="modal-content">
-							<input class="forms-border" type="text" name="login_name" placeholder="login name">
-							<input class="forms-border" type="password" name="login_pass" placeholder="password">
-							<button class="btn">Enter</button>
-						</div>
-
-					</div>
-
-				</section>
+			
 
 
 
 		</section><!-- main -->
-	 
 
 
-	    
-	<script type="text/javascript" src="js/script.js"></script>  	
-	
+
+
+	<script type="text/javascript" src="js/script.js"></script>
+
 	</body>
 </html>
