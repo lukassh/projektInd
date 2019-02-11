@@ -526,9 +526,8 @@ template {
 }
 
 .main-window-title {
-  height: 50px;
+  height: 60px;
   width: 100%;
-  border-bottom: 1px solid #e3e3e3;
 }
 
 .main-window-title h1 {
@@ -536,7 +535,8 @@ template {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
-  padding: 5px 20px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .btn-small {
@@ -584,6 +584,19 @@ template {
   align-items: center;
 }
 
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.no-display {
+  visibility: hidden;
+}
+
 .scrollbarr::-webkit-scrollbar-track {
   background-color: #9c9c9c;
 }
@@ -595,6 +608,22 @@ template {
 
 .scrollbarr::-webkit-scrollbar-thumb {
   background-color: #e3e3e3;
+}
+
+.main-line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #e3e3e3;
+  margin: 30px 0 40px;
+}
+
+.content-container {
+  margin: 0 180px;
+}
+
+input:focus {
+  border-bottom: 1px solid #black;
+  color: black;
 }
 
 /* Sections */
@@ -640,6 +669,7 @@ body -webkit-scrollbar-thumb {
   transition: all 200ms linear;
   /* end of top */
   /* end of na */
+  /* end of sidebar header */
 }
 
 .sidebar .top {
@@ -647,7 +677,6 @@ body -webkit-scrollbar-thumb {
   display: flex;
   padding: 20px;
   /* end of logo class */
-  /* end of hamburger */
 }
 
 .sidebar .top .logo {
@@ -763,6 +792,32 @@ body -webkit-scrollbar-thumb {
   padding: 8px;
 }
 
+.sidebar .sidebar-header {
+  display: none;
+  width: 100px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebar .sidebar-header em {
+  font-size: 22px;
+  color: #979797;
+  cursor: pointer;
+}
+
+.sidebar .sidebar-header .sidebar-header-cell {
+  display: none;
+  max-height: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10px;
+}
+
 /* end of sidebar  */
 .header {
   /* header top begin */
@@ -863,6 +918,10 @@ body -webkit-scrollbar-thumb {
   background: #000;
 }
 
+#sidebar.active .sidebar-header {
+  display: none;
+}
+
 #main.wide {
   padding-left: 20px;
 }
@@ -879,18 +938,8 @@ body -webkit-scrollbar-thumb {
 }
 
 .forms-border {
-  border-bottom: 1px solid #e3e3e3;
+  border: 1px solid #e3e3e3;
   border-radius: 3px;
-}
-
-.main-line {
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid #e3e3e3;
-}
-
-.content-container {
-  margin: 0 180px;
 }
 
 .general-search {
@@ -902,8 +951,12 @@ body -webkit-scrollbar-thumb {
 
 .general-search .form-class {
   padding: 5px;
+}
+
+.general-search .form-class legend {
   border: 1px solid #e3e3e3;
   border-radius: 5px;
+  display: flex;
 }
 
 .general-search form {
@@ -919,17 +972,27 @@ body -webkit-scrollbar-thumb {
   height: 40px;
   padding: 7px;
   border: none;
+  color: #a6a6a6;
+  background: #fff;
   background-image: url("/images/icons/calendar.svg");
   background-repeat: no-repeat;
   background-size: 12px auto;
   background-position: right 20px center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
-.general-search form [type="date"]::-webkit-inner-spin-button {
+.general-search form input[type="date"]:first-child {
+  background: #fff;
+}
+
+.general-search form input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
 
-.general-search form [type="date"]::-webkit-calendar-picker-indicator {
+.general-search form input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 
@@ -1029,7 +1092,7 @@ body -webkit-scrollbar-thumb {
 }
 
 .table-links a {
-  color: black;
+  color: #f58220;
 }
 
 .form-general {
@@ -1042,6 +1105,7 @@ body -webkit-scrollbar-thumb {
 }
 
 .form-general .form-data {
+  padding-top: 20px;
   display: flex;
   width: 500px;
   flex-direction: row;
@@ -1053,7 +1117,7 @@ body -webkit-scrollbar-thumb {
 .form-general .form-data input {
   border-radius: 5px;
   border: 1px solid #e3e3e3;
-  padding: 5px;
+  padding: 10px;
   height: 40px;
   width: 350px;
 }
@@ -1077,9 +1141,16 @@ body -webkit-scrollbar-thumb {
   font-size: 14px;
 }
 
-.table-details thead th:hover {
+.table-details thead th:hover span {
   background: #f5f5f2;
+  padding: 10px;
   cursor: pointer;
+  font-size: inherit;
+}
+
+.table-details thead th:hover em {
+  visibility: visible;
+  font-size: 10px;
 }
 
 .table-details thead tr:first-child:hover {
@@ -1101,6 +1172,7 @@ body -webkit-scrollbar-thumb {
 /* Table payouts section */
 .table-payout {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   padding: 0 50px;
@@ -1117,9 +1189,16 @@ body -webkit-scrollbar-thumb {
   font-size: 14px;
 }
 
-.table-payout thead th:hover {
+.table-payout thead th:hover span {
   background: #f5f5f2;
+  padding: 10px;
   cursor: pointer;
+  font-size: inherit;
+}
+
+.table-payout thead th:hover em {
+  visibility: visible;
+  font-size: 10px;
 }
 
 .table-payout thead tr:first-child:hover {
@@ -1221,6 +1300,11 @@ body -webkit-scrollbar-thumb {
   padding: 40px 0;
 }
 
+.postback-last-to .postback-checkbox {
+  width: 45%;
+  padding-left: 50px;
+}
+
 .postback-last-to .postback-checkbox form {
   padding-left: 20px;
   display: flex;
@@ -1233,22 +1317,27 @@ body -webkit-scrollbar-thumb {
 }
 
 .postback-last-to .postback-progressbar {
+  border-left: 1px solid #e3e3e3;
+  width: 50%;
+  padding-left: 50px;
   display: flex;
   justify-content: flex-start;
 }
 
 .postback-last-to .postback-progressbar form {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  color: #a6a6a6;
   /* suwak */
 }
 
 .postback-last-to .postback-progressbar form input[type=range] {
   -webkit-appearance: none;
   margin: 18px 0;
-  width: 500px;
+  width: 90%;
   margin-top: 0;
   padding-top: 0;
 }
@@ -1294,10 +1383,36 @@ body -webkit-scrollbar-thumb {
 
 .postback-last-to .postback-progressbar form .labels {
   display: flex;
-  width: 500px;
+  width: 90%;
   justify-content: space-between;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  border: 1px solid #e3e3e3;
+  background: #e3e3e3;
+  position: relative;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-moz-range-thumb {
+  position: absolute;
+  bottom: -50px;
+  height: 0;
+  width: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid #f5811f;
+  background: transparent;
+  cursor: pointer;
+}
+
+.postback-last-to .postback-progressbar form input[type=range]::-moz-range-progress {
+  background-color: #f5811f;
+  height: 1em;
 }
 
 .postback-button {
@@ -1330,10 +1445,9 @@ body -webkit-scrollbar-thumb {
 
 .modal {
   max-width: 600px;
-  margin: auto;
   background-color: #ffffff;
   position: relative;
-  padding: 30px;
+  padding: 10px;
   display: none;
 }
 
@@ -1346,12 +1460,26 @@ body -webkit-scrollbar-thumb {
   display: block;
 }
 
-.btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px 10px;
-  cursor: pointer;
+.modal .modal-window-title {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.modal .modal-window-title h1 {
+  color: #a6a6a6;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal-exit {
+  width: 400px;
+}
+
+.modal-exit .modal-content {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 20%;
 }
 
 .modal.show {
@@ -1360,10 +1488,8 @@ body -webkit-scrollbar-thumb {
 
 /* popup - message */
 .popup-message-window {
-  background: #fff;
   max-width: 800px;
   width: 100%;
-  position: relative;
 }
 
 .popup-message-window .modal-content-message .user-info {
@@ -1444,15 +1570,7 @@ body -webkit-scrollbar-thumb {
 
 /* popup login */
 .popup-login-window {
-  width: 700px;
-  height: 170px;
-  background: #fff;
-  position: relative;
-}
-
-.popup-login-window input {
-  height: 40px;
-  width: 200px;
+  width: 100%;
 }
 
 .popup-login-window .modal-content {
@@ -1460,6 +1578,28 @@ body -webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.popup-login-window .modal-content input {
+  padding: 5px 40px;
+  height: 40px;
+  width: 30%;
+}
+
+.popup-login-window .modal-content .input-user {
+  background-image: url("/images/icons/login.svg");
+  background-repeat: no-repeat;
+  background-size: 16px auto;
+  background-position: left 10px center;
+  color: #a6a6a6;
+}
+
+.popup-login-window .modal-content .input-password {
+  background-image: url("/images/icons/password.svg");
+  background-repeat: no-repeat;
+  background-size: 18px auto;
+  background-position: left 10px center;
+  color: #a6a6a6;
 }
 
 @media (min-width: 993px) and (max-width: 1999px) {
@@ -1480,6 +1620,14 @@ body -webkit-scrollbar-thumb {
     margin-top: 25px;
     display: flex;
     justify-content: space-around;
+  }
+  .postback-progressbar {
+    padding: 50px 0;
+    flex-direction: column;
+  }
+  .postback-progressbar form {
+    padding-top: 30px;
+    width: 350px;
   }
 }
 
@@ -1519,6 +1667,7 @@ body -webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     padding-left: 20px;
+    font-size: 0.9em;
   }
   .table-links .table-third em {
     opacity: 1;
@@ -1532,10 +1681,10 @@ body -webkit-scrollbar-thumb {
     font-weight: 500;
     padding-right: 30px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .table-details table td {
-    font-size: 1em;
+    font-size: .9em;
     width: 100%;
     padding-right: 10px;
     text-align: center;
@@ -1550,10 +1699,12 @@ body -webkit-scrollbar-thumb {
     width: 90%;
   }
   .table-payout thead th {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    text-align: center;
   }
   .table-payout td {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    text-align: center;
   }
   .postback-form-textarea, .postback-form-select, .postback-last-to {
     display: flex;
@@ -1562,6 +1713,15 @@ body -webkit-scrollbar-thumb {
     margin: 0 auto;
     padding-top: 30px;
   }
+  .postback-textarea {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .postback-last-to {
+    margin-top: 30px;
+  }
   .postback-last-to .postback-checkbox form {
     height: 100%;
     overflow-y: hidden;
@@ -1569,9 +1729,11 @@ body -webkit-scrollbar-thumb {
   .postback-last-to .postback-progressbar {
     padding: 50px 0;
     flex-direction: column;
+    padding-left: 20px;
   }
   .postback-last-to .postback-progressbar form {
     padding-top: 30px;
+    width: 500px;
   }
   .scroll-wrapper {
     width: 100%;
@@ -1607,6 +1769,9 @@ body -webkit-scrollbar-thumb {
   #sidebar.active .icon, #sidebar.active .icon::before, #sidebar.active .icon::after {
     background: #fff;
   }
+  #sidebar.active .sidebar-header {
+    display: block;
+  }
   #main.wide {
     padding-top: 350px;
   }
@@ -1632,6 +1797,21 @@ body -webkit-scrollbar-thumb {
   .sidebar .nav-sidebar {
     display: none;
   }
+  .sidebar .sidebar-header {
+    display: none;
+    position: fixed;
+    width: 60px;
+    border: 1px solid #a6a6a6;
+    /* end of header */
+  }
+  .sidebar .sidebar-header .sidebar-header-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sidebar .sidebar-header .sidebar-header-cell em {
+    cursor: pointer;
+  }
   .main {
     padding-left: 0;
     padding-top: 10px;
@@ -1641,8 +1821,7 @@ body -webkit-scrollbar-thumb {
     margin: 0 auto;
   }
   .header {
-    bottom: 0;
-    width: 100%;
+    display: none;
   }
   .general-search {
     height: 100%;
@@ -1716,15 +1895,35 @@ body -webkit-scrollbar-thumb {
     margin: 0 auto;
     padding-top: 30px;
   }
+  .postback-form-textarea h1 {
+    padding-left: 50px;
+  }
+  .postback-textarea {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .postback-last-to {
+    margin-top: 30px;
+  }
+  .postback-last-to .postback-checkbox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
   .postback-last-to .postback-checkbox form {
     height: 100%;
     overflow-y: hidden;
   }
   .postback-last-to .postback-progressbar {
-    padding: 50px 0;
+    padding: 50px;
+    width: 100%;
     flex-direction: column;
   }
   .postback-last-to .postback-progressbar form {
+    max-width: 90%;
+    width: 100%;
     padding-top: 30px;
   }
   .table-payout thead {
@@ -1733,6 +1932,7 @@ body -webkit-scrollbar-thumb {
   .table-payout tbody {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .table-payout td {
     display: block;
@@ -1762,7 +1962,7 @@ body -webkit-scrollbar-thumb {
     content: "Account:";
   }
   .table-details {
-    justify-content: center;
+    padding-left: 50px;
   }
   .table-details thead {
     display: none;
@@ -1770,6 +1970,7 @@ body -webkit-scrollbar-thumb {
   .table-details tbody {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .table-details td {
     display: block;

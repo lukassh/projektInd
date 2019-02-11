@@ -81,7 +81,7 @@ body {
       top: -7px; 
       left: 0;
    }
-         /* end of hamburger */ 
+        
   } /* end of top */
 
 
@@ -156,6 +156,34 @@ body {
 
     }
   }
+   .sidebar-header {
+      display: none;
+      width: 100px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      
+      
+      justify-content: center;
+      flex-wrap: nowrap;
+      bottom: 0;
+      left: 0;
+   
+      em {
+        font-size: 22px;
+        color: #979797;
+        cursor: pointer;
+      }
+
+      .sidebar-header-cell {
+        display: none;
+        max-height: 50px;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 10px;
+      }
+
+    } /* end of sidebar header */ 
 } /* end of sidebar  */
 
 .header { /* header top begin */ 
