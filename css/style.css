@@ -1355,6 +1355,14 @@ body -webkit-scrollbar-thumb {
   position: relative;
 }
 
+.postback-last-to .postback-progressbar form .progress-value {
+  height: 6px;
+  width: 100%;
+  background: #f5811f;
+  position: absolute;
+  top: 48px;
+}
+
 .postback-last-to .postback-progressbar form input[type=range]:active {
   background: #f5811f;
 }
@@ -1628,6 +1636,14 @@ body -webkit-scrollbar-thumb {
   .postback-progressbar form {
     padding-top: 30px;
     width: 350px;
+    position: relative;
+  }
+  .postback-progressbar .progress-value {
+    height: 6px;
+    width: 10px;
+    background: #f5811f;
+    position: absolute;
+    top: 48px;
   }
 }
 

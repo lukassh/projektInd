@@ -454,6 +454,14 @@
           background: #e3e3e3;
           position: relative;
         }
+        .progress-value {
+          height: 6px;
+
+          width: 100%;
+          background: #f5811f;
+          position: absolute;
+          top: 48px;
+        } 
         input[type=range]:active {
           background: #f5811f;
         }
@@ -744,13 +752,21 @@
   
   .postback-progressbar {
     padding: 50px 0;
+
     flex-direction: column;
     form {
        padding-top: 30px;
        width: 350px;
+       position: relative;
     }
-
-    }
+   .progress-value {
+      height: 6px;
+      width: 10px;
+      background: #f5811f;
+      position: absolute;
+      top: 48px;
+    } 
+  }
   
 
 }
