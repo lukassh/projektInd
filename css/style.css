@@ -1332,6 +1332,9 @@ body -webkit-scrollbar-thumb {
   align-items: flex-start;
   color: #a6a6a6;
   /* suwak */
+  /*  input[type=range]:focus::-webkit-slider-runnable-track {
+          background: #f5811f;
+        } */
 }
 
 .postback-last-to .postback-progressbar form input[type=range] {
@@ -1383,10 +1386,6 @@ body -webkit-scrollbar-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -14px;
-}
-
-.postback-last-to .postback-progressbar form input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #f5811f;
 }
 
 .postback-last-to .postback-progressbar form .labels {

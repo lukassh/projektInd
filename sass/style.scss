@@ -456,7 +456,7 @@
         }
         .progress-value {
           height: 6px;
-
+          
           width: 100%;
           background: #f5811f;
           position: absolute;
@@ -469,7 +469,7 @@
 
         input[type=range]::-webkit-progress-inner-element {
           background-color: orange;
-        }
+        } 
         /* suwak */
         input[type=range]::-webkit-slider-thumb {
           position: absolute;
@@ -484,9 +484,9 @@
           -webkit-appearance: none;
           margin-top: -14px;
         }
-        input[type=range]:focus::-webkit-slider-runnable-track {
+      /*  input[type=range]:focus::-webkit-slider-runnable-track {
           background: #f5811f;
-        }
+        } */
         .labels {
             display: flex;
             width: 90%;

@@ -101,13 +101,13 @@ for (var i = 0; i < btns.length; i++) {
   });
 };
 
-var track = document.querySelector('#ranger');
-var val = track.getAttribute('value');
-var valMax = track.getAttribute('max');
-var valMin = track.getAttribute('min');
-var progres =  ( val / valMax ) * 100 ;
-var prog = document.querySelector('.progress-value');
-prog.style = ('width: ' + progres + '%');
-track.addEvenListener('change', function() {
-                              
-});
+var track = document.getElementById('ranger');
+ 
+function status(){
+   var val = track.getAttribute('value');
+    var valMax = track.getAttribute('max');
+    var valMin = track.getAttribute('min');
+    var progres =  ( val / valMax ) * 100 ;
+    var prog = document.querySelector('.progress-value');
+    prog.style = ('width: ' + progres + '%');                         
+};
