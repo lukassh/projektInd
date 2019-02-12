@@ -409,6 +409,28 @@
      padding: 40px 0;
 
   .postback-checkbox {
+    label {
+        input[type="checkbox"] {
+          position: absolute;
+          margin: 0;
+          width: 14px;
+          height: 14px;
+          opacity: 0;
+
+          + .checkedBox {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #a6a6a6;
+            color: white;
+            font-size: 5px;
+          }
+
+          &:checked + .checkedBox {
+            background-color: #04ae00;
+          }
+        }
+      }
     width: 45%;
     padding-left: 50px;
     form {
@@ -462,9 +484,9 @@
           position: absolute;
           top: 48px;
         } 
-        input[type=range]:active {
+     /*   input[type=range]:active {
           background: #f5811f;
-        }
+        } */
 
 
         input[type=range]::-webkit-progress-inner-element {

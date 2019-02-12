@@ -1,4 +1,8 @@
 //Hide sidebar 
+var toggleIcon = document.getElementById('icon');
+toggleIcon.addEventListener('click', function() {
+  toggleSidebar();
+});
 
 function toggleSidebar(){
   document.getElementById('sidebar').classList.toggle('active');
@@ -48,6 +52,40 @@ var chart = new Chart(ctx, {
 });
 
 // Modal funciones
+var openModalMessenger = document.getElementById('openModalMessenger');
+openModalMessenger.addEventListener('click', function() {
+  openModal('#modalMessage');
+})
+
+var openModalLogin = document.getElementById('openModalLogin');
+openModalLogin.addEventListener('click', function() {
+  openModal('#modalLogin');
+})
+
+var openModalQuit = document.getElementById('openModalQuit');
+openModalQuit.addEventListener('click', function() {
+  openModal('#modalQuit');
+})
+
+var openMobileMessenger = document.getElementById('openModalMobMessenger');
+openMobileMessenger.addEventListener('click', function() {
+  openModal('#modalMessage');
+})
+
+var openMobileLogin = document.getElementById('openModalMobLogin');
+openMobileLogin.addEventListener('click', function() {
+  openModal('#modalLogin');
+})
+
+var openMobileQuit = document.getElementById('openModalMobQuit');
+openMobileQuit.addEventListener('click', function() {
+  openModal('#modalQuit');
+})
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('show')
+};
+
 
 function closeModal() {
   document.getElementById('overlay').classList.remove('show')
@@ -101,13 +139,23 @@ for (var i = 0; i < btns.length; i++) {
   });
 };
 
+
+// Range 
 var track = document.getElementById('ranger');
- 
-function status(){
-   var val = track.getAttribute('value');
-    var valMax = track.getAttribute('max');
-    var valMin = track.getAttribute('min');
-    var progres =  ( val / valMax ) * 100 ;
-    var prog = document.querySelector('.progress-value');
-    prog.style = ('width: ' + progres + '%');                         
+
+
+function status(valueAkt){
+  var value = valueAkt;
+  var valueMax = track.getAttribute('max');
+  var valueMin = track.getAttribute('min');
+  var progressProcent =  ( value / valueMax ) * 100 ;
+  console.log(progressProcent);
+  var progressBar = document.querySelector('.progress-value');
+  progressBar.style = ('width: ' + progressProcent + '%');  
+  var result = document.getElementById('resultRange');
+  resultRange.innerHTML = value;
 };
+
+track.addEventListener('click', function() {
+  status(track.value);
+}) 

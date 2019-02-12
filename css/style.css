@@ -584,6 +584,10 @@ template {
   align-items: center;
 }
 
+.linkCursor {
+  cursor: pointer;
+}
+
 .btn-close {
   position: absolute;
   top: 0;
@@ -1305,6 +1309,27 @@ body -webkit-scrollbar-thumb {
   padding-left: 50px;
 }
 
+.postback-last-to .postback-checkbox label input[type="checkbox"] {
+  position: absolute;
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+}
+
+.postback-last-to .postback-checkbox label input[type="checkbox"] + .checkedBox {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #a6a6a6;
+  color: white;
+  font-size: 5px;
+}
+
+.postback-last-to .postback-checkbox label input[type="checkbox"]:checked + .checkedBox {
+  background-color: #04ae00;
+}
+
 .postback-last-to .postback-checkbox form {
   padding-left: 20px;
   display: flex;
@@ -1331,6 +1356,9 @@ body -webkit-scrollbar-thumb {
   justify-content: center;
   align-items: flex-start;
   color: #a6a6a6;
+  /*   input[type=range]:active {
+          background: #f5811f;
+        } */
   /* suwak */
   /*  input[type=range]:focus::-webkit-slider-runnable-track {
           background: #f5811f;
@@ -1364,10 +1392,6 @@ body -webkit-scrollbar-thumb {
   background: #f5811f;
   position: absolute;
   top: 48px;
-}
-
-.postback-last-to .postback-progressbar form input[type=range]:active {
-  background: #f5811f;
 }
 
 .postback-last-to .postback-progressbar form input[type=range]::-webkit-progress-inner-element {

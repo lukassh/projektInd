@@ -24,7 +24,7 @@
 
 				      </div><!-- logo -->
 
-				      <div id="icon" onclick="toggleSidebar()">
+				      <div id="icon">
 
 				      		<div class="icon"></div>
 
@@ -74,17 +74,17 @@
 					    	
 					   	</div>
 
-					    <div class="sidebar-header-cell" onclick="openModal('#modalMessage')">
+					    <div id="openModalMobMessenger" class="sidebar-header-cell linkCursor">
 					    	<em class="icon-notification"></em>
 					    </div>
 
-					    <div class="sidebar-header-cell">
+					    <div id="openModalMobLogin" class="sidebar-header-cell linkCursor">
 
-					    	<em  onclick="openModal('#modalLogin')" class="icon-profile"></em>
+					    	<em  class="icon-profile"></em>
 
 					    </div>
 
-					    <div class="sidebar-header-cell" onclick="openModal('#modalQuit')">
+					    <div id="openModalMobQuit" class="sidebar-header-cell linkCursor">
 					    	<a href="#"><em class="icon-quit"></em></a>
 					    </div>
 
@@ -104,8 +104,8 @@
 
 				   	</div>
 
-				    <div class="header-cell" onclick="openModal('#modalMessage')">
-				    	<em class="icon-notification"></em>
+				    <div class="header-cell">
+				    	<em id="openModalMessenger" class="icon-notification linkCursor"></em>
 				    	<div class="lights-logged"></div>
 				    </div>
 
@@ -113,13 +113,13 @@
 
 				    	<em class="icon-profile"></em>
 
-				    	<a href="#"><h2 onclick="openModal('#modalLogin')">Leonardo Dicaprio</h2></a>
+				    	<a href="#" id="openModalLogin"><h2>Leonardo Dicaprio</h2></a>
 
 
 				    </div>
 
-				    <div class="header-cell" onclick="openModal('#modalQuit')">
-				    	<a href="#"><em class="icon-quit"></em></a>
+				    <div class="header-cell">
+				    	<a href="#" id="openModalQuit"><em class="icon-quit"></em></a>
 				    </div>
 
 			</section><!-- header -->
@@ -892,17 +892,18 @@
 				     			<h1 class="default-h1"><span>NOT</span> send statuses</h1>
 				     			<form  class="scrollbarr" action="" method="POST">
 
-				     				<label><input type="checkbox" name="checkNumber">checkNumber</label>
+				     				<label><input type="checkbox" name="checkNumber">
+				     					<div class="checkedBox"></div> checkNumber</label>
 
-				     				<label><input type="checkbox" name="noAnswer"> noAnswer</label>
+				     				<label><input type="checkbox" name="noAnswer"><div class="checkedBox"></div> noAnswer</label>
 
-				     				<label><input type="checkbox" name="noCall"> noCall</label>
+				     				<label><input type="checkbox" name="noCall"><div class="checkedBox"></div> noCall</label>
 
-				     				<label><input type="checkbox" name="callAgain"> callAgain</label>
+				     				<label><input type="checkbox" name="callAgain"><div class="checkedBox"></div> callAgain</label>
 
-				     				<label><input type="checkbox" name="nextOption"> nextOption</label>
+				     				<label><input type="checkbox" name="nextOption"><div class="checkedBox"></div> nextOption</label>
 
-				     				<label><input type="checkbox" name="lastOption"> lastOption</label>
+				     				<label><input type="checkbox" name="lastOption"><div class="checkedBox"></div> lastOption</label>
 
 				     			</form>
 
@@ -916,7 +917,8 @@
 											  <label for="progressValueranger:max" value="168">168</label>
 										</div>
 
-										<input value="70" id="ranger" type="range" min="0" max="168"  class="slider" onchange="status()">
+										<input type="range" value="50" id="ranger"  min="0" max="168" step="2" class="slider">
+										<p id="resultRange"></p>
 
 										<div class="progress-value" id=""></div>
 									</form>
